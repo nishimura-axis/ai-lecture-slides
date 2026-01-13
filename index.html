@@ -597,11 +597,11 @@
             <div class="slide-menu-item" onclick="goToSlide(28)">29. 要件定義とは</div>
             <div class="slide-menu-item" onclick="goToSlide(29)">30. 要件定義プロンプト</div>
             <div class="slide-menu-item" onclick="goToSlide(30)">31. .cursor/rules 作成</div>
+            <div class="slide-menu-item" onclick="goToSlide(31)">32. 開発中のルール</div>
         </div>
         
         <div class="slide-menu-section">
             <h4>Part 8: ローカル開発</h4>
-            <div class="slide-menu-item" onclick="goToSlide(31)">32. ローカル開発の流れ</div>
             <div class="slide-menu-item" onclick="goToSlide(32)">33. チェックポイント</div>
             <div class="slide-menu-item" onclick="goToSlide(33)">34. こまめなコミット</div>
         </div>
@@ -1461,18 +1461,42 @@ CLI環境を構築し、接続テストを行いたいです。
             <!-- Slide 28: .cursor/rules 作成 -->
             <section>
                 <h2>📋 .cursor/rules 作成</h2>
-                <p>要件定義が固まったら、ルールファイルを作成</p>
+                <p style="font-size: 0.85em;">要件定義が固まったら、ルールファイルを作成</p>
                 <div class="prompt-box">
                     <h4>📋 コピペ用プロンプト</h4>
-                    <pre><code>/Generate Rules
-https://cursor.com/ja/docs/context/rules を参照して
-このプロジェクト用のルールを作成して</code></pre>
+                    <pre><code># .cursor/rules 作成依頼
+
+## 参考ドキュメント
+https://cursor.com/ja/docs/context/rules
+
+## 依頼内容
+このプロジェクト用の .cursor/rules ファイルを作成して。
+
+## 含めるべき内容
+1. docs/requirements.md の要件定義
+2. docs/technical-spec.md の技術要件
+3. コーディング規約とファイル構成ルール
+
+## 重要なルール（必ず含める）
+- 何か実装を進める前に、必ずこのrulesと要件定義書・技術要件を確認してから作業すること
+- 不明点があれば必ず質問すること
+- 勝手に要件を変更しないこと
+- 私がOKと言うまでデプロイは進めないこと（まずローカル環境でテスト）</code></pre>
                 </div>
-                <div class="warning-box">
-                    <h4>⚠️ 開発中のルール</h4>
-                    <p>開発を進めるときは毎回<br>
-                    「<strong>cursor rulesを参照して要件定義と技術要件を確認してから進めて</strong>」<br>
-                    と指示してください</p>
+            </section>
+            
+            <!-- Slide 28b: 開発中のルール -->
+            <section>
+                <h2>⚠️ 開発中のルール</h2>
+                <p>開発を進めるときは<strong>毎回</strong>以下を指示してください</p>
+                <div class="prompt-box">
+                    <h4>📋 コピペ用プロンプト</h4>
+                    <pre><code>cursor rulesを参照して要件定義と技術要件を確認してから進めて</code></pre>
+                </div>
+                <div class="warning-box" style="margin-top: 20px;">
+                    <h4>💡 なぜ毎回必要？</h4>
+                    <p>AIは基本的に「記憶が浅い」ため、せっかく固めた要件を無視して開発を進めてしまう可能性があります。<br>
+                    毎回ルールを思い出させることで、一貫した開発ができます。</p>
                 </div>
             </section>
             
@@ -1480,23 +1504,7 @@ https://cursor.com/ja/docs/context/rules を参照して
             <!-- Part 8: ローカル開発 -->
             <!-- ================================ -->
             
-            <!-- Slide 29: ローカル開発の流れ -->
-            <section>
-                <h2><span class="step-indicator">5</span> ローカル開発の流れ</h2>
-                <div class="card">
-                    <h4>Mac の場合</h4>
-                    <pre><code>要件定義書に従い、Homebrewで必要な環境を構築して</code></pre>
-                </div>
-                <div class="card">
-                    <h4>Windows の場合</h4>
-                    <pre><code>要件定義書に従い、WSL2 + Ubuntuで必要な環境構築をして</code></pre>
-                </div>
-                <p class="small" style="margin-top: 16px;">
-                    💡 AIが必要なツールのインストールコマンドを自動で実行してくれます
-                </p>
-            </section>
-            
-            <!-- Slide 30: 開発中のチェックポイント -->
+            <!-- Slide 29: 開発中のチェックポイント -->
             <section>
                 <h2>✅ 開発中のチェックポイント</h2>
                 <ul class="checklist">
