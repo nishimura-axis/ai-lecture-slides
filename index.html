@@ -573,44 +573,44 @@
             <h4>Part 5: GitHubセットアップ</h4>
             <div class="slide-menu-item" onclick="goToSlide(17)">18. GitHubとは</div>
             <div class="slide-menu-item" onclick="goToSlide(18)">19. アカウント作成</div>
-            <div class="slide-menu-item" onclick="goToSlide(19)">20. アクセストークン取得</div>
-            <div class="slide-menu-item" onclick="goToSlide(20)">21. 初回プッシュ用プロンプト</div>
+            <div class="slide-menu-item" onclick="goToSlide(19)">20-22. アクセストークン取得</div>
+            <div class="slide-menu-item" onclick="goToSlide(22)">23. 初回プッシュ用プロンプト</div>
         </div>
         
         <div class="slide-menu-section">
             <h4>Part 6: Google Cloudセットアップ</h4>
-            <div class="slide-menu-item" onclick="goToSlide(21)">22. Google Cloudとは</div>
-            <div class="slide-menu-item" onclick="goToSlide(22)">23. 組織内メンバーの設定</div>
-            <div class="slide-menu-item" onclick="goToSlide(23)">24. 組織外メンバーの設定</div>
-            <div class="slide-menu-item" onclick="goToSlide(24)">25. CLI接続テスト</div>
+            <div class="slide-menu-item" onclick="goToSlide(23)">24. Google Cloudとは</div>
+            <div class="slide-menu-item" onclick="goToSlide(24)">25. 組織内メンバーの設定</div>
+            <div class="slide-menu-item" onclick="goToSlide(25)">26. 組織外メンバーの設定</div>
+            <div class="slide-menu-item" onclick="goToSlide(26)">27. CLI接続テスト</div>
         </div>
         
         <div class="slide-menu-section">
             <h4>Part 7: 要件定義・技術要件</h4>
-            <div class="slide-menu-item" onclick="goToSlide(25)">26. 要件定義とは</div>
-            <div class="slide-menu-item" onclick="goToSlide(26)">27. 要件定義プロンプト</div>
-            <div class="slide-menu-item" onclick="goToSlide(27)">28. .cursor/rules 作成</div>
+            <div class="slide-menu-item" onclick="goToSlide(27)">28. 要件定義とは</div>
+            <div class="slide-menu-item" onclick="goToSlide(28)">29. 要件定義プロンプト</div>
+            <div class="slide-menu-item" onclick="goToSlide(29)">30. .cursor/rules 作成</div>
         </div>
         
         <div class="slide-menu-section">
             <h4>Part 8: ローカル開発</h4>
-            <div class="slide-menu-item" onclick="goToSlide(28)">29. ローカル開発の流れ</div>
-            <div class="slide-menu-item" onclick="goToSlide(29)">30. チェックポイント</div>
-            <div class="slide-menu-item" onclick="goToSlide(30)">31. こまめなコミット</div>
+            <div class="slide-menu-item" onclick="goToSlide(30)">31. ローカル開発の流れ</div>
+            <div class="slide-menu-item" onclick="goToSlide(31)">32. チェックポイント</div>
+            <div class="slide-menu-item" onclick="goToSlide(32)">33. こまめなコミット</div>
         </div>
         
         <div class="slide-menu-section">
             <h4>Part 9: デプロイ</h4>
-            <div class="slide-menu-item" onclick="goToSlide(31)">32. デプロイとは</div>
-            <div class="slide-menu-item" onclick="goToSlide(32)">33. Cloud Runデプロイ</div>
-            <div class="slide-menu-item" onclick="goToSlide(33)">34. 動作確認</div>
+            <div class="slide-menu-item" onclick="goToSlide(33)">34. デプロイとは</div>
+            <div class="slide-menu-item" onclick="goToSlide(34)">35. Cloud Runデプロイ</div>
+            <div class="slide-menu-item" onclick="goToSlide(35)">36. 動作確認</div>
         </div>
         
         <div class="slide-menu-section">
             <h4>Part 10: 成果発表</h4>
-            <div class="slide-menu-item" onclick="goToSlide(34)">35. 成果発表の5項目</div>
-            <div class="slide-menu-item" onclick="goToSlide(35)">36. 実践タイム</div>
-            <div class="slide-menu-item" onclick="goToSlide(36)">37. Let's Start!</div>
+            <div class="slide-menu-item" onclick="goToSlide(36)">37. 成果発表の5項目</div>
+            <div class="slide-menu-item" onclick="goToSlide(37)">38. 実践タイム</div>
+            <div class="slide-menu-item" onclick="goToSlide(38)">39. Let's Start!</div>
         </div>
     </div>
 
@@ -1053,19 +1053,120 @@
                 </div>
             </section>
             
-            <!-- Slide 20: アクセストークン取得 -->
+            <!-- Slide 20: アクセストークン取得 - Step 1-2 -->
             <section>
-                <h2>🔑 アクセストークン取得</h2>
-                <table>
-                    <tr><th>Step</th><th>操作</th></tr>
-                    <tr><td>1</td><td>右上プロフィールアイコン → <strong>Settings</strong></td></tr>
-                    <tr><td>2</td><td>左メニュー下部 → <strong>Developer settings</strong></td></tr>
-                    <tr><td>3</td><td><strong>Personal access tokens</strong> → <strong>Tokens (classic)</strong></td></tr>
-                    <tr><td>4</td><td><strong>Generate new token</strong> → <strong>Generate new token (classic)</strong></td></tr>
-                    <tr><td>5</td><td>Expiration: <strong>No expiration</strong></td></tr>
-                    <tr><td>6</td><td>Select scopes: <strong>repo</strong> と <strong>workflow</strong> にチェック</td></tr>
-                    <tr><td>7</td><td>「Generate token」→ <strong>トークンをメモ</strong>（二度と表示されない）</td></tr>
-                </table>
+                <h2>🔑 アクセストークン取得（Step 1-2）</h2>
+                <div style="display: flex; gap: 30px; align-items: flex-start; justify-content: center;">
+                    <!-- Step 1: Settings -->
+                    <div style="text-align: center;">
+                        <p style="font-size: 0.7em; margin-bottom: 10px;"><strong>Step 1:</strong> 右上アイコン → Settings</p>
+                        <svg viewBox="0 0 220 320" style="width: 200px; border: 1px solid #d0d7de; border-radius: 8px; background: #fff;">
+                            <rect x="0" y="0" width="220" height="50" fill="#f6f8fa"/>
+                            <circle cx="195" cy="25" r="16" fill="#2da44e"/>
+                            <text x="195" y="30" text-anchor="middle" font-size="14" fill="#fff">👤</text>
+                            <rect x="10" y="60" width="200" height="40" fill="#fff" stroke="#d0d7de" rx="6"/>
+                            <text x="25" y="85" font-size="12" fill="#1f2328">⚙️ Settings</text>
+                            <rect x="10" y="60" width="200" height="40" fill="rgba(74,123,247,0.1)" stroke="#4A7BF7" stroke-width="2" rx="6"/>
+                            <rect x="10" y="110" width="200" height="30" fill="#fff"/>
+                            <text x="25" y="130" font-size="11" fill="#656d76">🤖 Copilot settings</text>
+                            <rect x="10" y="145" width="200" height="30" fill="#fff"/>
+                            <text x="25" y="165" font-size="11" fill="#656d76">🎨 Appearance</text>
+                            <rect x="10" y="180" width="200" height="30" fill="#fff"/>
+                            <text x="25" y="200" font-size="11" fill="#656d76">♿ Accessibility</text>
+                            <line x1="10" y1="220" x2="210" y2="220" stroke="#d0d7de"/>
+                            <rect x="10" y="230" width="200" height="30" fill="#fff"/>
+                            <text x="25" y="250" font-size="11" fill="#656d76">🚪 Sign out</text>
+                        </svg>
+                    </div>
+                    
+                    <!-- Step 2: Developer settings -->
+                    <div style="text-align: center;">
+                        <p style="font-size: 0.7em; margin-bottom: 10px;"><strong>Step 2:</strong> 左下 → Developer settings</p>
+                        <svg viewBox="0 0 220 320" style="width: 200px; border: 1px solid #d0d7de; border-radius: 8px; background: #fff;">
+                            <text x="15" y="25" font-size="10" fill="#656d76" font-weight="bold">Security</text>
+                            <rect x="10" y="35" width="200" height="28" fill="#fff"/>
+                            <text x="25" y="53" font-size="11" fill="#1f2328">🔒 Code security</text>
+                            <text x="15" y="80" font-size="10" fill="#656d76" font-weight="bold">Integrations</text>
+                            <rect x="10" y="90" width="200" height="28" fill="#fff"/>
+                            <text x="25" y="108" font-size="11" fill="#1f2328">📦 Applications</text>
+                            <rect x="10" y="123" width="200" height="28" fill="#fff"/>
+                            <text x="25" y="141" font-size="11" fill="#1f2328">⏰ Scheduled reminders</text>
+                            <text x="15" y="175" font-size="10" fill="#656d76" font-weight="bold">Archives</text>
+                            <rect x="10" y="185" width="200" height="28" fill="#fff"/>
+                            <text x="25" y="203" font-size="11" fill="#1f2328">📋 Security log</text>
+                            <rect x="10" y="218" width="200" height="28" fill="#fff"/>
+                            <text x="25" y="236" font-size="11" fill="#1f2328">💰 Sponsorship log</text>
+                            <line x1="10" y1="255" x2="210" y2="255" stroke="#d0d7de"/>
+                            <rect x="10" y="265" width="200" height="35" fill="rgba(74,123,247,0.1)" stroke="#4A7BF7" stroke-width="2" rx="6"/>
+                            <text x="25" y="287" font-size="12" fill="#1f2328" font-weight="bold">&lt;/&gt; Developer settings</text>
+                        </svg>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Slide 20b: アクセストークン取得 - Step 3-4 -->
+            <section>
+                <h2>🔑 アクセストークン取得（Step 3-4）</h2>
+                <div style="display: flex; gap: 30px; align-items: flex-start; justify-content: center;">
+                    <!-- Step 3-4: Generate new token -->
+                    <div style="text-align: center;">
+                        <p style="font-size: 0.7em; margin-bottom: 10px;"><strong>Step 3-4:</strong> Personal access tokens → Tokens (classic) → Generate new token (classic)</p>
+                        <svg viewBox="0 0 350 180" style="width: 320px; border: 1px solid #d0d7de; border-radius: 8px; background: #fff;">
+                            <rect x="150" y="15" width="180" height="35" fill="#f6f8fa" stroke="#d0d7de" rx="6"/>
+                            <text x="175" y="38" font-size="12" fill="#1f2328">Generate new token ▼</text>
+                            <rect x="150" y="55" width="180" height="100" fill="#fff" stroke="#d0d7de" rx="6" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.1))"/>
+                            <rect x="155" y="62" width="170" height="40" fill="#fff"/>
+                            <text x="165" y="80" font-size="11" fill="#1f2328" font-weight="bold">Generate new token</text>
+                            <text x="165" y="95" font-size="10" fill="#656d76">Fine-grained, repo-scoped</text>
+                            <line x1="155" y1="105" x2="325" y2="105" stroke="#d0d7de"/>
+                            <rect x="155" y="108" width="170" height="40" fill="rgba(74,123,247,0.1)" stroke="#4A7BF7" stroke-width="2" rx="4"/>
+                            <text x="165" y="126" font-size="11" fill="#1f2328" font-weight="bold">Generate new token (classic)</text>
+                            <text x="165" y="141" font-size="10" fill="#656d76">For general use</text>
+                        </svg>
+                    </div>
+                </div>
+                <p class="center small" style="margin-top: 20px;">※ 「classic」を選択してください</p>
+            </section>
+            
+            <!-- Slide 20c: アクセストークン取得 - Step 5-6 -->
+            <section>
+                <h2>🔑 アクセストークン取得（Step 5-7）</h2>
+                <div style="display: flex; flex-direction: column; gap: 15px; align-items: center;">
+                    <svg viewBox="0 0 550 280" style="width: 100%; max-width: 520px; border: 1px solid #d0d7de; border-radius: 8px; background: #fff; padding: 10px;">
+                        <!-- Expiration -->
+                        <text x="20" y="30" font-size="13" fill="#1f2328" font-weight="bold" style="background: #fff4c4;">Expiration</text>
+                        <rect x="15" y="25" width="75" height="18" fill="#fff4c4" rx="2"/>
+                        <text x="20" y="38" font-size="11" fill="#1f2328" font-weight="bold">Expiration</text>
+                        <rect x="20" y="50" width="150" height="32" fill="#f6f8fa" stroke="#d0d7de" rx="6"/>
+                        <text x="35" y="71" font-size="11" fill="#1f2328">📅 No expiration ▼</text>
+                        
+                        <!-- Warning -->
+                        <text x="20" y="105" font-size="9" fill="#9a6700">⚠️ GitHub strongly recommends that you set an expiration date...</text>
+                        
+                        <!-- Select scopes -->
+                        <text x="20" y="135" font-size="13" fill="#1f2328" font-weight="bold">Select scopes</text>
+                        <text x="20" y="152" font-size="10" fill="#656d76">Scopes define the access for personal tokens.</text>
+                        
+                        <!-- repo checkbox -->
+                        <rect x="20" y="165" width="510" height="70" fill="#f6f8fa" stroke="#d0d7de" rx="6"/>
+                        <rect x="30" y="175" width="16" height="16" fill="#4A7BF7" stroke="#4A7BF7" rx="3"/>
+                        <text x="34" y="188" font-size="12" fill="#fff">✓</text>
+                        <text x="55" y="188" font-size="12" fill="#1f2328" font-weight="bold">repo</text>
+                        <text x="200" y="188" font-size="10" fill="#656d76">Full control of private repositories</text>
+                        <text x="70" y="208" font-size="10" fill="#656d76">☑ repo:status  ☑ repo_deployment  ☑ public_repo  ☑ repo:invite</text>
+                        <text x="70" y="223" font-size="10" fill="#656d76">☑ security_events</text>
+                        
+                        <!-- workflow checkbox -->
+                        <rect x="20" y="245" width="510" height="30" fill="#f6f8fa" stroke="#d0d7de" rx="6"/>
+                        <rect x="30" y="252" width="16" height="16" fill="#4A7BF7" stroke="#4A7BF7" rx="3"/>
+                        <text x="34" y="265" font-size="12" fill="#fff">✓</text>
+                        <text x="55" y="265" font-size="12" fill="#1f2328" font-weight="bold">workflow</text>
+                        <text x="200" y="265" font-size="10" fill="#656d76">Update GitHub Action workflows</text>
+                    </svg>
+                </div>
+                <div class="card" style="margin-top: 15px; border-left-color: #d1242f;">
+                    <p style="font-size: 0.8em;"><strong>⚠️ 重要：</strong>「Generate token」後に表示されるトークンは<span class="accent">二度と表示されません</span>。必ずメモしてください！</p>
+                </div>
             </section>
             
             <!-- Slide 21: 初回プッシュ用プロンプト -->
