@@ -1,0 +1,1384 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIシステム開発講義 - AXIS</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/theme/white.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --axis-blue: #4A7BF7;
+            --axis-dark: #2D3748;
+            --axis-gray: #718096;
+            --axis-light: #F7FAFC;
+            --axis-white: #FFFFFF;
+        }
+        
+        .reveal {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 32px;
+            color: var(--axis-dark);
+        }
+        
+        .reveal h1, .reveal h2, .reveal h3 {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-weight: 700;
+            color: var(--axis-dark);
+            text-transform: none;
+        }
+        
+        .reveal h1 {
+            font-size: 2.2em;
+            margin-bottom: 0.5em;
+        }
+        
+        .reveal h2 {
+            font-size: 1.5em;
+            margin-bottom: 0.8em;
+        }
+        
+        .reveal h3 {
+            font-size: 1.1em;
+            color: var(--axis-gray);
+        }
+        
+        .reveal .slides {
+            text-align: left;
+        }
+        
+        .reveal .slides section {
+            padding: 20px 50px;
+        }
+        
+        .reveal .slide-background {
+            background: var(--axis-white);
+        }
+        
+        /* Title slide */
+        .title-slide {
+            text-align: center !important;
+        }
+        
+        .title-slide h1 {
+            font-size: 2.5em;
+            margin-top: 0.5em;
+        }
+        
+        /* Logo */
+        .logo {
+            position: fixed;
+            bottom: 20px;
+            left: 30px;
+            height: 30px;
+            opacity: 0.8;
+        }
+        
+        .logo-large {
+            height: 60px;
+            margin-bottom: 40px;
+        }
+        
+        /* Accent color */
+        .accent {
+            color: var(--axis-blue);
+        }
+        
+        .highlight {
+            background: linear-gradient(transparent 60%, rgba(74, 123, 247, 0.2) 60%);
+            padding: 0 4px;
+        }
+        
+        /* Cards */
+        .card {
+            background: var(--axis-light);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 12px 0;
+            border-left: 4px solid var(--axis-blue);
+        }
+        
+        .card-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 16px;
+        }
+        
+        .card h4 {
+            margin: 0 0 10px 0;
+            color: var(--axis-blue);
+            font-size: 0.85em;
+        }
+        
+        .card p, .card ul {
+            margin: 0;
+            font-size: 0.8em;
+            color: var(--axis-gray);
+        }
+        
+        .card ul {
+            padding-left: 20px;
+        }
+        
+        /* Lists */
+        .reveal ul, .reveal ol {
+            margin-left: 0;
+            padding-left: 1.2em;
+        }
+        
+        .reveal li {
+            margin-bottom: 0.4em;
+            line-height: 1.5;
+            font-size: 0.9em;
+        }
+        
+        /* Tables */
+        .reveal table {
+            font-size: 0.75em;
+            border-collapse: collapse;
+            width: 100%;
+            margin: 16px 0;
+        }
+        
+        .reveal table th {
+            background: var(--axis-blue);
+            color: white;
+            padding: 10px 14px;
+            text-align: left;
+            font-weight: 500;
+        }
+        
+        .reveal table td {
+            padding: 10px 14px;
+            border-bottom: 1px solid #E2E8F0;
+        }
+        
+        .reveal table tr:nth-child(even) {
+            background: var(--axis-light);
+        }
+        
+        /* Code blocks */
+        .reveal pre {
+            background: #1a1a2e;
+            border-radius: 8px;
+            padding: 16px;
+            font-size: 0.6em;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            max-height: 350px;
+            overflow-y: auto;
+        }
+        
+        .reveal code {
+            font-family: 'Monaco', 'Consolas', monospace;
+            background: var(--axis-light);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.85em;
+        }
+        
+        .reveal pre code {
+            background: transparent;
+            color: #E2E8F0;
+            padding: 0;
+        }
+        
+        /* Quote */
+        .quote {
+            font-size: 1.3em;
+            font-weight: 500;
+            text-align: center;
+            padding: 30px;
+            color: var(--axis-dark);
+            line-height: 1.6;
+        }
+        
+        .quote::before {
+            content: '"';
+            font-size: 2em;
+            color: var(--axis-blue);
+            display: block;
+            margin-bottom: -20px;
+        }
+        
+        /* Phase diagram */
+        .phase-diagram {
+            display: flex;
+            justify-content: space-between;
+            align-items: stretch;
+            margin: 20px 0;
+            gap: 12px;
+        }
+        
+        .phase {
+            flex: 1;
+            background: var(--axis-light);
+            border-radius: 12px;
+            padding: 16px;
+            text-align: center;
+        }
+        
+        .phase h4 {
+            font-size: 0.75em;
+            margin: 0 0 6px 0;
+            color: var(--axis-blue);
+        }
+        
+        .phase p {
+            font-size: 0.7em;
+            margin: 0;
+            color: var(--axis-gray);
+        }
+        
+        .arrow {
+            display: flex;
+            align-items: center;
+            color: var(--axis-blue);
+            font-size: 1.3em;
+        }
+        
+        /* Checklist */
+        .checklist {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .checklist li {
+            padding-left: 30px;
+            position: relative;
+            margin-bottom: 10px;
+        }
+        
+        .checklist li::before {
+            content: '☐';
+            position: absolute;
+            left: 0;
+            color: var(--axis-blue);
+            font-size: 1.1em;
+        }
+        
+        /* Step indicator */
+        .step-indicator {
+            display: inline-block;
+            background: var(--axis-blue);
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 32px;
+            font-weight: 700;
+            margin-right: 10px;
+            font-size: 0.9em;
+        }
+        
+        /* Two column */
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: start;
+        }
+        
+        /* Small text */
+        .small {
+            font-size: 0.7em;
+            color: var(--axis-gray);
+        }
+        
+        /* Center */
+        .center {
+            text-align: center !important;
+        }
+        
+        /* Screenshot placeholder */
+        .screenshot-placeholder {
+            background: linear-gradient(135deg, #E2E8F0 0%, #CBD5E0 100%);
+            border-radius: 12px;
+            padding: 40px 30px;
+            text-align: center;
+            color: var(--axis-gray);
+            border: 2px dashed #A0AEC0;
+            margin: 16px 0;
+            font-size: 0.8em;
+        }
+        
+        .screenshot-placeholder::before {
+            content: '📸';
+            font-size: 1.5em;
+            display: block;
+            margin-bottom: 8px;
+        }
+        
+        /* Navigation Menu */
+        .slide-menu-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 100;
+            background: var(--axis-blue);
+            color: white;
+            border: none;
+            padding: 10px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 14px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+        
+        .slide-menu-button:hover {
+            background: #3A6BE7;
+        }
+        
+        .slide-menu {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 380px;
+            height: 100vh;
+            background: white;
+            box-shadow: -4px 0 20px rgba(0,0,0,0.15);
+            z-index: 99;
+            transition: right 0.3s ease;
+            overflow-y: auto;
+            padding: 20px;
+        }
+        
+        .slide-menu.open {
+            right: 0;
+        }
+        
+        .slide-menu h3 {
+            margin: 0 0 20px 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--axis-blue);
+            font-size: 1em;
+        }
+        
+        .slide-menu-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--axis-gray);
+        }
+        
+        .slide-menu-section {
+            margin-bottom: 20px;
+        }
+        
+        .slide-menu-section h4 {
+            color: var(--axis-blue);
+            font-size: 0.8em;
+            margin: 0 0 8px 0;
+            padding: 8px;
+            background: var(--axis-light);
+            border-radius: 6px;
+        }
+        
+        .slide-menu-item {
+            display: block;
+            padding: 8px 12px;
+            color: var(--axis-dark);
+            text-decoration: none;
+            font-size: 0.75em;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        
+        .slide-menu-item:hover {
+            background: var(--axis-light);
+        }
+        
+        .slide-menu-item.active {
+            background: var(--axis-blue);
+            color: white;
+        }
+        
+        /* Overlay */
+        .menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.3);
+            z-index: 98;
+            display: none;
+        }
+        
+        .menu-overlay.open {
+            display: block;
+        }
+
+        /* Warning box */
+        .warning-box {
+            background: #FFFBEB;
+            border-left: 4px solid #F59E0B;
+            padding: 16px;
+            border-radius: 8px;
+            margin: 16px 0;
+        }
+        
+        .warning-box h4 {
+            color: #D97706;
+            margin: 0 0 8px 0;
+            font-size: 0.85em;
+        }
+        
+        .warning-box p {
+            margin: 0;
+            font-size: 0.8em;
+            color: #92400E;
+        }
+        
+        /* Success box */
+        .success-box {
+            background: #ECFDF5;
+            border-left: 4px solid #10B981;
+            padding: 16px;
+            border-radius: 8px;
+            margin: 16px 0;
+        }
+        
+        .success-box h4 {
+            color: #059669;
+            margin: 0 0 8px 0;
+            font-size: 0.85em;
+        }
+        
+        .success-box p {
+            margin: 0;
+            font-size: 0.8em;
+            color: #065F46;
+        }
+
+        /* Prompt box */
+        .prompt-box {
+            background: #1a1a2e;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 16px 0;
+        }
+        
+        .prompt-box h4 {
+            color: #10B981;
+            margin: 0 0 12px 0;
+            font-size: 0.8em;
+        }
+        
+        .prompt-box pre {
+            margin: 0;
+            background: transparent;
+            padding: 0;
+            box-shadow: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Logo SVG -->
+    <svg style="display:none">
+        <symbol id="axis-logo" viewBox="0 0 120 32">
+            <text x="0" y="26" font-family="'Noto Sans JP', sans-serif" font-weight="900" font-size="28" fill="#2D3748">
+                <tspan>A</tspan><tspan fill="#4A7BF7">X</tspan><tspan>IS</tspan>
+            </text>
+        </symbol>
+    </svg>
+
+    <!-- Menu Button -->
+    <button class="slide-menu-button" onclick="toggleMenu()">📑 メニュー</button>
+    
+    <!-- Menu Overlay -->
+    <div class="menu-overlay" onclick="toggleMenu()"></div>
+    
+    <!-- Slide Menu -->
+    <div class="slide-menu">
+        <button class="slide-menu-close" onclick="toggleMenu()">×</button>
+        <h3>📑 スライド一覧</h3>
+        
+        <div class="slide-menu-section">
+            <h4>Part 1: オープニング</h4>
+            <div class="slide-menu-item" onclick="goToSlide(0)">1. タイトル</div>
+            <div class="slide-menu-item" onclick="goToSlide(1)">2. 今日のゴール</div>
+            <div class="slide-menu-item" onclick="goToSlide(2)">3. コアメッセージ</div>
+            <div class="slide-menu-item" onclick="goToSlide(3)">4. 今日の流れ</div>
+        </div>
+        
+        <div class="slide-menu-section">
+            <h4>Part 2: AI駆動開発とは</h4>
+            <div class="slide-menu-item" onclick="goToSlide(4)">5. AI駆動開発とは</div>
+            <div class="slide-menu-item" onclick="goToSlide(5)">6. 開発フロー全体像</div>
+            <div class="slide-menu-item" onclick="goToSlide(6)">7. 人間とAIの役割分担</div>
+            <div class="slide-menu-item" onclick="goToSlide(7)">8. 丸投げではなく協働</div>
+        </div>
+        
+        <div class="slide-menu-section">
+            <h4>Part 3: 全体概要</h4>
+            <div class="slide-menu-item" onclick="goToSlide(8)">9. 開発フロー（6ステップ）</div>
+            <div class="slide-menu-item" onclick="goToSlide(9)">10. 技術スタック一覧</div>
+            <div class="slide-menu-item" onclick="goToSlide(10)">11. AIとのコミュニケーション</div>
+            <div class="slide-menu-item" onclick="goToSlide(11)">12. .cursor/rules の重要性</div>
+            <div class="slide-menu-item" onclick="goToSlide(12)">13. エラー対応の5原則</div>
+        </div>
+        
+        <div class="slide-menu-section">
+            <h4>Part 4: Cursorセットアップ</h4>
+            <div class="slide-menu-item" onclick="goToSlide(13)">14. Cursorとは</div>
+            <div class="slide-menu-item" onclick="goToSlide(14)">15. インストール手順</div>
+            <div class="slide-menu-item" onclick="goToSlide(15)">16. 初期設定</div>
+            <div class="slide-menu-item" onclick="goToSlide(16)">17. Auto-Run Mode設定</div>
+        </div>
+        
+        <div class="slide-menu-section">
+            <h4>Part 5: GitHubセットアップ</h4>
+            <div class="slide-menu-item" onclick="goToSlide(17)">18. GitHubとは</div>
+            <div class="slide-menu-item" onclick="goToSlide(18)">19. アカウント作成</div>
+            <div class="slide-menu-item" onclick="goToSlide(19)">20. アクセストークン取得</div>
+            <div class="slide-menu-item" onclick="goToSlide(20)">21. 初回プッシュ用プロンプト</div>
+        </div>
+        
+        <div class="slide-menu-section">
+            <h4>Part 6: Google Cloudセットアップ</h4>
+            <div class="slide-menu-item" onclick="goToSlide(21)">22. Google Cloudとは</div>
+            <div class="slide-menu-item" onclick="goToSlide(22)">23. 組織内メンバーの設定</div>
+            <div class="slide-menu-item" onclick="goToSlide(23)">24. 組織外メンバーの設定</div>
+            <div class="slide-menu-item" onclick="goToSlide(24)">25. CLI接続テスト</div>
+        </div>
+        
+        <div class="slide-menu-section">
+            <h4>Part 7: 要件定義・技術要件</h4>
+            <div class="slide-menu-item" onclick="goToSlide(25)">26. 要件定義とは</div>
+            <div class="slide-menu-item" onclick="goToSlide(26)">27. 要件定義プロンプト</div>
+            <div class="slide-menu-item" onclick="goToSlide(27)">28. .cursor/rules 作成</div>
+        </div>
+        
+        <div class="slide-menu-section">
+            <h4>Part 8: ローカル開発</h4>
+            <div class="slide-menu-item" onclick="goToSlide(28)">29. ローカル開発の流れ</div>
+            <div class="slide-menu-item" onclick="goToSlide(29)">30. チェックポイント</div>
+            <div class="slide-menu-item" onclick="goToSlide(30)">31. こまめなコミット</div>
+        </div>
+        
+        <div class="slide-menu-section">
+            <h4>Part 9: デプロイ</h4>
+            <div class="slide-menu-item" onclick="goToSlide(31)">32. デプロイとは</div>
+            <div class="slide-menu-item" onclick="goToSlide(32)">33. Cloud Runデプロイ</div>
+            <div class="slide-menu-item" onclick="goToSlide(33)">34. 動作確認</div>
+        </div>
+        
+        <div class="slide-menu-section">
+            <h4>Part 10: 成果発表</h4>
+            <div class="slide-menu-item" onclick="goToSlide(34)">35. 成果発表の5項目</div>
+            <div class="slide-menu-item" onclick="goToSlide(35)">36. 実践タイム</div>
+            <div class="slide-menu-item" onclick="goToSlide(36)">37. Let's Start!</div>
+        </div>
+    </div>
+
+    <div class="reveal">
+        <div class="slides">
+            
+            <!-- ================================ -->
+            <!-- Part 1: オープニング -->
+            <!-- ================================ -->
+            
+            <!-- Slide 1: タイトル -->
+            <section class="title-slide">
+                <svg class="logo-large"><use href="#axis-logo"/></svg>
+                <h1>AIシステム開発講義</h1>
+                <h3>〜 自分の手でシステムを作る 〜</h3>
+                <p class="small" style="margin-top: 60px;">2026年1月14日（火）</p>
+            </section>
+            
+            <!-- Slide 2: 今日のゴール -->
+            <section>
+                <h2>🎯 今日のゴール</h2>
+                <div class="quote">
+                    システムを1つ完成させる<br>
+                    <span class="highlight">（デプロイまで）</span>
+                </div>
+                <p class="center small" style="margin-top: 30px;">
+                    「動くものを作って、世界に公開する」を体験する1日
+                </p>
+            </section>
+            
+            <!-- Slide 3: コアメッセージ -->
+            <section>
+                <h2>💡 今日一番伝えたいこと</h2>
+                <div class="quote">
+                    エンジニアに頼むしかない<br>
+                    と思っていたことが、<br>
+                    <span class="accent">AIを使えば自分でできる</span>
+                </div>
+            </section>
+            
+            <!-- Slide 4: 今日の流れ -->
+            <section>
+                <h2>📅 今日の流れ</h2>
+                <table>
+                    <tr>
+                        <th>時間</th>
+                        <th>内容</th>
+                        <th>形式</th>
+                    </tr>
+                    <tr>
+                        <td><strong>10:00-12:00</strong></td>
+                        <td>座学（この資料）</td>
+                        <td>講義</td>
+                    </tr>
+                    <tr>
+                        <td><strong>12:00-18:00</strong></td>
+                        <td>実践開発</td>
+                        <td>各自作業 + 壁打ち</td>
+                    </tr>
+                    <tr>
+                        <td><strong>18:00-19:00</strong></td>
+                        <td>成果発表</td>
+                        <td>発表会</td>
+                    </tr>
+                </table>
+                <p class="small">※ 昼休憩は各自自由に取ってください</p>
+            </section>
+            
+            <!-- ================================ -->
+            <!-- Part 2: AI駆動開発とは -->
+            <!-- ================================ -->
+            
+            <!-- Slide 5: AI駆動開発とは -->
+            <section>
+                <h2>🤖 AI駆動開発とは</h2>
+                <p style="font-size: 1em; margin-bottom: 20px;">
+                    <strong>AI Driven Development</strong>
+                </p>
+                <div class="card">
+                    <h4>定義</h4>
+                    <ul>
+                        <li><strong>主体</strong>：コードを書くのは<span class="accent">AI</span>。人間は書きません。</li>
+                        <li><strong>人間の役割</strong>：目的・要件・制約を決定し、設計・コードをレビューする</li>
+                        <li><strong>フィードバック</strong>：動かしてみて修正指示を出すサイクルを回す</li>
+                    </ul>
+                </div>
+            </section>
+            
+            <!-- Slide 6: 開発フロー全体像 -->
+            <section>
+                <h2>🔄 開発フロー全体像</h2>
+                <div class="phase-diagram">
+                    <div class="phase">
+                        <h4>フェーズ1</h4>
+                        <p><strong>企画・製造</strong></p>
+                        <p style="margin-top: 8px; font-size: 0.6em;">
+                            👤 要求を伝える<br>
+                            🤖 設計 & コード作成
+                        </p>
+                    </div>
+                    <div class="arrow">→</div>
+                    <div class="phase">
+                        <h4>フェーズ2</h4>
+                        <p><strong>テスト・修正</strong></p>
+                        <p style="margin-top: 8px; font-size: 0.6em;">
+                            👤 動作確認<br>
+                            🔄 修正指示 ⇔ 修正
+                        </p>
+                    </div>
+                    <div class="arrow">→</div>
+                    <div class="phase">
+                        <h4>フェーズ3</h4>
+                        <p><strong>公開</strong></p>
+                        <p style="margin-top: 8px; font-size: 0.6em;">
+                            🚀 デプロイ<br>
+                            🌍 世界中へお届け！
+                        </p>
+                    </div>
+                </div>
+                <p class="center small">
+                    人間（発注者）→ AI（コーダー）→ 人間（テスター）→ 公開
+                </p>
+            </section>
+            
+            <!-- Slide 7: 人間とAIの役割分担 -->
+            <section>
+                <h2>👥 人間とAIの役割分担</h2>
+                <div class="card-grid">
+                    <div class="card">
+                        <h4>👤 人間の役割</h4>
+                        <ul>
+                            <li>システムの使用目的決定</li>
+                            <li>必要な画面・項目の考案</li>
+                            <li>動作確認と合否判定</li>
+                            <li>業務視点でのフィードバック</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h4>🤖 AIの役割</h4>
+                        <ul>
+                            <li>Next.js等のコード記述</li>
+                            <li>DB設計</li>
+                            <li>エラー原因の特定・修正</li>
+                            <li>技術的な実装詳細の決定</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Slide 8: 丸投げではなく協働 -->
+            <section>
+                <h2>🤝 「丸投げ」ではなく「協働」</h2>
+                <div class="two-col">
+                    <div>
+                        <h3 style="color: #E53E3E;">❌ ダメな例</h3>
+                        <div class="card" style="border-left-color: #E53E3E;">
+                            <p>「いい感じのアプリ作って」</p>
+                            <p>「なんかエラー出た、直して」</p>
+                            <p>「全部お任せで」</p>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 style="color: #38A169;">✅ 良い例</h3>
+                        <div class="card" style="border-left-color: #38A169;">
+                            <p>「顧客一覧画面で名前と会社名を表示したい」</p>
+                            <p>「このエラーが出た。〇〇を期待していた」</p>
+                            <p>「まず提案だけして」</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- ================================ -->
+            <!-- Part 3: 全体概要 -->
+            <!-- ================================ -->
+            
+            <!-- Slide 9: 開発フロー（6ステップ） -->
+            <section>
+                <h2>🗺 開発フロー（6ステップ）</h2>
+                <table>
+                    <tr>
+                        <th>Step</th>
+                        <th>内容</th>
+                        <th>目安時間</th>
+                    </tr>
+                    <tr><td><span class="step-indicator">1</span></td><td>Cursorセットアップ</td><td>20分</td></tr>
+                    <tr><td><span class="step-indicator">2</span></td><td>GitHubセットアップ</td><td>20分</td></tr>
+                    <tr><td><span class="step-indicator">3</span></td><td>Google Cloudセットアップ</td><td>20分</td></tr>
+                    <tr><td><span class="step-indicator">4</span></td><td>要件定義・技術要件作成</td><td>2時間</td></tr>
+                    <tr><td><span class="step-indicator">5</span></td><td>ローカル開発</td><td>3時間</td></tr>
+                    <tr><td><span class="step-indicator">6</span></td><td>デプロイ</td><td>1時間</td></tr>
+                </table>
+            </section>
+            
+            <!-- Slide 10: 技術スタック一覧 -->
+            <section>
+                <h2>🛠 今日使う技術スタック</h2>
+                <table>
+                    <tr>
+                        <th>カテゴリ</th>
+                        <th>ツール</th>
+                        <th>役割</th>
+                    </tr>
+                    <tr>
+                        <td>エディタ + AI</td>
+                        <td><strong>Cursor</strong></td>
+                        <td>コードを書く場所 & AIと対話</td>
+                    </tr>
+                    <tr>
+                        <td>フレームワーク</td>
+                        <td><strong>Next.js</strong></td>
+                        <td>Webアプリの骨組み</td>
+                    </tr>
+                    <tr>
+                        <td>バージョン管理</td>
+                        <td><strong>GitHub</strong></td>
+                        <td>コードの保存・履歴管理</td>
+                    </tr>
+                    <tr>
+                        <td>データベース</td>
+                        <td><strong>PostgreSQL + Prisma</strong></td>
+                        <td>データの保存</td>
+                    </tr>
+                    <tr>
+                        <td>デプロイ先</td>
+                        <td><strong>GCP Cloud Run</strong></td>
+                        <td>世界に公開</td>
+                    </tr>
+                </table>
+            </section>
+            
+            <!-- Slide 11: AIとのコミュニケーション -->
+            <section>
+                <h2>💬 AIとのコミュニケーション基本</h2>
+                <div class="warning-box">
+                    <h4>🔑 最重要ポイント</h4>
+                    <p><strong>目的を先に伝える</strong></p>
+                </div>
+                <div class="two-col" style="margin-top: 20px;">
+                    <div>
+                        <h3 style="color: #E53E3E; font-size: 0.9em;">❌ 悪い例</h3>
+                        <p class="small">「テーブル作って」</p>
+                        <p class="small">「ボタン追加して」</p>
+                    </div>
+                    <div>
+                        <h3 style="color: #38A169; font-size: 0.9em;">✅ 良い例</h3>
+                        <p class="small">「顧客一覧画面で、名前・会社名・日付を表示したい」</p>
+                        <p class="small">「登録ボタンを押したらDBに保存したい」</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Slide 12: .cursor/rules の重要性 -->
+            <section>
+                <h2>📋 .cursor/rules の重要性</h2>
+                <div class="warning-box">
+                    <h4>⚠️ AIの弱点</h4>
+                    <p><strong>AIは基本的に「記憶が浅い」</strong><br>
+                    せっかく要件定義と技術要件を固めても、それを無視して開発を進めてしまう可能性がある</p>
+                </div>
+                <div class="success-box">
+                    <h4>✅ 解決策</h4>
+                    <p>開発時は<strong>必ず .cursor/rules を参照してから作成する</strong>ことをルールにする<br>
+                    → AIに毎回「このプロジェクトのルール」を思い出させる</p>
+                </div>
+            </section>
+            
+            <!-- Slide 13: エラー対応の5原則 -->
+            <section>
+                <h2>🔧 エラー対応の5原則</h2>
+                <ul>
+                    <li><strong>エラーは「普通」</strong><br>
+                        <span class="small">プロのエンジニアでもエラーは日常茶飯事</span></li>
+                    <li><strong>エラーメッセージはヒント</strong><br>
+                        <span class="small">読めなくてもAIに丸ごと貼れば解決策を教えてくれる</span></li>
+                    <li><strong>「動かない」は情報不足</strong><br>
+                        <span class="small">何をして、何が表示されて、何を期待していたかを伝える</span></li>
+                    <li><strong>諦めるな、AIに聞け</strong><br>
+                        <span class="small">同じエラーでも聞き方を変えると解決することがある</span></li>
+                    <li><strong>困ったら壁打ち</strong><br>
+                        <span class="small">今日は西村がいます。遠慮なく聞いてください。</span></li>
+                </ul>
+            </section>
+            
+            <!-- ================================ -->
+            <!-- Part 4: Cursorセットアップ -->
+            <!-- ================================ -->
+            
+            <!-- Slide 14: Cursorとは -->
+            <section>
+                <h2><span class="step-indicator">1</span> Cursorとは</h2>
+                <div class="card">
+                    <h4>💻 AIが住んでいるエディタ</h4>
+                    <ul>
+                        <li>コードを書く場所（VS Codeベース）</li>
+                        <li>AIに指示を出してコードを書いてもらう</li>
+                        <li>エラーの原因特定・修正もAIに任せられる</li>
+                    </ul>
+                </div>
+                <p class="small" style="margin-top: 20px;">
+                    公式サイト：<a href="https://cursor.com/ja" target="_blank">https://cursor.com/ja</a>
+                </p>
+            </section>
+            
+            <!-- Slide 15: Cursorインストール手順 -->
+            <section>
+                <h2>💻 Cursorインストール手順</h2>
+                <table>
+                    <tr><th>Step</th><th>操作</th></tr>
+                    <tr><td>1</td><td><a href="https://cursor.com/ja" target="_blank">cursor.com/ja</a> にアクセス</td></tr>
+                    <tr><td>2</td><td>「macOS版をダウンロード」をクリック</td></tr>
+                    <tr><td>3</td><td>インストーラーを実行</td></tr>
+                    <tr><td>4</td><td>アカウント作成（Google連携OK）</td></tr>
+                </table>
+                <div class="screenshot-placeholder">
+                    Cursorダウンロード画面のスクショ
+                </div>
+            </section>
+            
+            <!-- Slide 16: Cursor初期設定 -->
+            <section>
+                <h2>⚙️ Cursor初期設定</h2>
+                <table>
+                    <tr><th>設定項目</th><th>内容</th></tr>
+                    <tr><td><strong>課金</strong></td><td>$20/月 の Pro プランに加入</td></tr>
+                    <tr><td><strong>フォルダ作成</strong></td><td>プロジェクト用フォルダを作成して開く</td></tr>
+                    <tr><td><strong>モデル選択</strong></td><td><strong>Opus</strong> を選択（慣れてきたら他も試す）</td></tr>
+                </table>
+                <p class="small" style="margin-top: 16px;">
+                    💡 Proプランで最新のAIモデルが使い放題になります
+                </p>
+            </section>
+            
+            <!-- Slide 17: Auto-Run Mode設定 -->
+            <section>
+                <h2>⚡ Auto-Run Mode設定</h2>
+                <p>AIがコマンドを自動実行できるようにする設定</p>
+                <table>
+                    <tr><th>Step</th><th>操作</th></tr>
+                    <tr><td>1</td><td>左上メニュー「<strong>Cursor</strong>」をクリック</td></tr>
+                    <tr><td>2</td><td>「<strong>Preferences</strong>」→「<strong>Cursor Settings</strong>」を選択</td></tr>
+                    <tr><td>3</td><td>左メニューで「<strong>Agents</strong>」を選択</td></tr>
+                    <tr><td>4</td><td>「<strong>Auto-Run Mode</strong>」を「<strong>Run Everything (Unsandboxed)</strong>」に変更</td></tr>
+                </table>
+                <div class="screenshot-placeholder">
+                    Cursor Settings → Agents → Auto-Run Mode のスクショ
+                </div>
+            </section>
+            
+            <!-- ================================ -->
+            <!-- Part 5: GitHubセットアップ -->
+            <!-- ================================ -->
+            
+            <!-- Slide 18: GitHubとは -->
+            <section>
+                <h2><span class="step-indicator">2</span> GitHubとは</h2>
+                <div class="card">
+                    <h4>📦 コードの金庫</h4>
+                    <ul>
+                        <li>コードをクラウドに保存</li>
+                        <li>変更履歴を自動で記録</li>
+                        <li>いつでも過去の状態に戻せる</li>
+                        <li>チームでの共同作業にも使える</li>
+                    </ul>
+                </div>
+                <p class="small" style="margin-top: 16px;">
+                    公式サイト：<a href="https://github.co.jp/" target="_blank">https://github.co.jp/</a>
+                </p>
+            </section>
+            
+            <!-- Slide 19: GitHubアカウント作成 -->
+            <section>
+                <h2>📦 GitHubアカウント作成</h2>
+                <table>
+                    <tr><th>Step</th><th>操作</th></tr>
+                    <tr><td>1</td><td><a href="https://github.co.jp/" target="_blank">github.co.jp</a> にアクセス</td></tr>
+                    <tr><td>2</td><td>「Sign up」をクリック</td></tr>
+                    <tr><td>3</td><td><strong>Googleアカウントでサインアップ</strong>（楽）</td></tr>
+                    <tr><td>4</td><td>メール認証を完了</td></tr>
+                    <tr><td>5</td><td>「New repository」からリポジトリを作成</td></tr>
+                </table>
+                <div class="screenshot-placeholder">
+                    GitHubサインアップ画面のスクショ
+                </div>
+            </section>
+            
+            <!-- Slide 20: アクセストークン取得 -->
+            <section>
+                <h2>🔑 アクセストークン取得</h2>
+                <table>
+                    <tr><th>Step</th><th>操作</th></tr>
+                    <tr><td>1</td><td>右上プロフィールアイコン → <strong>Settings</strong></td></tr>
+                    <tr><td>2</td><td>左メニュー下部 → <strong>Developer settings</strong></td></tr>
+                    <tr><td>3</td><td><strong>Personal access tokens</strong> → <strong>Tokens (classic)</strong></td></tr>
+                    <tr><td>4</td><td><strong>Generate new token</strong> → <strong>Generate new token (classic)</strong></td></tr>
+                    <tr><td>5</td><td>Expiration: <strong>No expiration</strong></td></tr>
+                    <tr><td>6</td><td>Select scopes: <strong>repo</strong> と <strong>workflow</strong> にチェック</td></tr>
+                    <tr><td>7</td><td>「Generate token」→ <strong>トークンをメモ</strong>（二度と表示されない）</td></tr>
+                </table>
+            </section>
+            
+            <!-- Slide 21: 初回プッシュ用プロンプト -->
+            <section>
+                <h2>📝 初回プッシュ用プロンプト</h2>
+                <p class="small">以下をCursorにコピペして実行</p>
+                <div class="prompt-box">
+                    <h4>📋 コピペ用プロンプト</h4>
+                    <pre><code># プロジェクト初期設定
+
+## 目的
+これから業務改善のシステムを開発します。
+まずはGitHubとの連携を確立し、初回プッシュまでを完了させたいです。
+
+## 開発の進め方（重要ルール）
+1. 要件定義書と技術要件を先に固める
+   - 私が「OK」と言うまで実装は進めない
+   - 不明点があれば必ず質問する
+2. .cursor/rules を作成し、要件を保存
+   - 作業前に必ずrulesを参照してから進める
+3. タスクのチェックリストで進捗を可視化
+
+## 技術スタック（予定）
+- Next.js 15 (App Router) / Prisma / PostgreSQL
+- Tailwind CSS / Google Cloud (Cloud Run)
+※ より良い案があれば提案してください
+
+## 今回のタスク
+GitHubとの連携をCLIで設定し、初回プッシュまで実行して。
+コマンドの提示ではなく、実行までしてください。</code></pre>
+                </div>
+            </section>
+            
+            <!-- ================================ -->
+            <!-- Part 6: Google Cloudセットアップ -->
+            <!-- ================================ -->
+            
+            <!-- Slide 22: Google Cloudとは -->
+            <section>
+                <h2><span class="step-indicator">3</span> Google Cloudとは</h2>
+                <div class="card">
+                    <h4>☁️ インターネット上の公開場所</h4>
+                    <ul>
+                        <li>作ったアプリを世界中に公開できる</li>
+                        <li>24時間365日動き続ける</li>
+                        <li>Cloud Run：コンテナを簡単にデプロイ</li>
+                    </ul>
+                </div>
+                <p class="small" style="margin-top: 16px;">
+                    コンソール：<a href="https://console.cloud.google.com/" target="_blank">console.cloud.google.com</a>
+                </p>
+            </section>
+            
+            <!-- Slide 23: 組織内メンバーの設定 -->
+            <section>
+                <h2>☁️ 組織内メンバー（@shibuya-ad.com）</h2>
+                <table>
+                    <tr><th>Step</th><th>操作</th></tr>
+                    <tr><td>1</td><td><a href="https://console.cloud.google.com/" target="_blank">console.cloud.google.com</a> にアクセス</td></tr>
+                    <tr><td>2</td><td>会社のGoogleアカウントでログイン</td></tr>
+                    <tr><td>3</td><td>組織アカウント内で新しいプロジェクトを作成</td></tr>
+                    <tr><td>4</td><td>Cloud Run APIを有効化</td></tr>
+                    <tr><td>5</td><td>gcloud CLIをインストール</td></tr>
+                    <tr><td>6</td><td><code>gcloud auth login</code> で認証</td></tr>
+                </table>
+                <div class="success-box">
+                    <h4>✅ 請求先アカウント</h4>
+                    <p>設定済みです（西村が設定済み）</p>
+                </div>
+            </section>
+            
+            <!-- Slide 24: 組織外メンバーの設定 -->
+            <section>
+                <h2>☁️ 組織外メンバー（個人アカウント）</h2>
+                <table>
+                    <tr><th>Step</th><th>操作</th></tr>
+                    <tr><td>1</td><td><a href="https://console.cloud.google.com/" target="_blank">console.cloud.google.com</a> にアクセス</td></tr>
+                    <tr><td>2</td><td>Googleアカウントでログイン（なければ作成）</td></tr>
+                    <tr><td>3</td><td><strong>請求先アカウントを設定</strong>（クレジットカード登録）</td></tr>
+                    <tr><td>4</td><td>新しいプロジェクトを作成</td></tr>
+                    <tr><td>5</td><td>Cloud Run APIを有効化</td></tr>
+                    <tr><td>6</td><td>gcloud CLIをインストール</td></tr>
+                    <tr><td>7</td><td><code>gcloud auth login</code> で認証</td></tr>
+                </table>
+                <div class="warning-box">
+                    <h4>⚠️ 請求先アカウント</h4>
+                    <p>事前に設定を完了させてください</p>
+                </div>
+            </section>
+            
+            <!-- Slide 25: CLI接続テスト -->
+            <section>
+                <h2>🔧 CLI接続テスト用プロンプト</h2>
+                <p class="small">Google Cloudの設定確認</p>
+                <div class="prompt-box">
+                    <h4>📋 コピペ用プロンプト</h4>
+                    <pre><code># Google Cloud CLI セットアップ＆接続テスト
+
+## 目的
+Google Cloud（Cloud Run）へのデプロイ準備として、
+CLI環境を構築し、接続テストを行いたいです。
+
+## 実行してほしいこと（CLIで実行）
+
+1. gcloud CLI インストール確認（なければインストール）
+2. gcloud auth login で認証
+3. プロジェクト設定と確認
+4. Cloud Run API 有効化確認
+5. gcloud config list で現在の設定を表示
+6. すべて正常に完了したことを報告
+
+※ コマンドの提示ではなく、実行までしてください。
+※ エラーが出た場合は、原因と解決策を提示してください。</code></pre>
+                </div>
+            </section>
+            
+            <!-- ================================ -->
+            <!-- Part 7: 要件定義・技術要件作成 -->
+            <!-- ================================ -->
+            
+            <!-- Slide 26: 要件定義とは -->
+            <section>
+                <h2><span class="step-indicator">4</span> 要件定義とは</h2>
+                <p>「何を作るか」を明確にする作業</p>
+                <div class="card-grid">
+                    <div class="card">
+                        <h4>決めること</h4>
+                        <ul>
+                            <li>誰が使うか</li>
+                            <li>何ができるか</li>
+                            <li>どんな画面があるか</li>
+                            <li>どんなデータを扱うか</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h4>なぜ重要？</h4>
+                        <ul>
+                            <li>AIへの指示が明確になる</li>
+                            <li>手戻りが減る</li>
+                            <li>完成イメージが共有できる</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Slide 27: 要件定義プロンプト -->
+            <section>
+                <h2>📝 要件定義作成プロンプト</h2>
+                <p class="small">【  】の部分を自分の内容に書き換えて使用</p>
+                <div class="prompt-box">
+                    <h4>📋 コピペ用フォーマット</h4>
+                    <pre><code># 要件定義書・技術要件の作成依頼
+
+## 解決したい課題
+### 現状（Before）
+- 何に困っているか: 【例：タスク管理をスプシで行っている】
+- どのくらいの頻度: 【例：毎日】
+- どのくらいの工数: 【例：1日30分】
+- 具体的な問題点: 【例：完了/未完了の把握が面倒】
+
+### 理想状態（After）
+- どうなっていれば理想か: 【例：一覧で確認、ワンクリックで変更】
+- 測れる成果: 【例：確認時間が1日5分以内に】
+
+## 作りたいシステム
+- システム概要: 【例：チームのタスク管理アプリ】
+- 必要な機能: 【例：一覧表示、登録、ステータス変更】
+- 使用する人: 【例：自分のみ / チーム5名】
+
+## 依頼事項
+1. docs/requirements.md に要件定義書として保存
+2. docs/technical-spec.md に技術要件を保存
+3. .cursor/rules を作成してルール設定
+4. 不明点があれば質問して
+5. 私が「OK」と言うまで実装は進めないで</code></pre>
+                </div>
+            </section>
+            
+            <!-- Slide 28: .cursor/rules 作成 -->
+            <section>
+                <h2>📋 .cursor/rules 作成</h2>
+                <p>要件定義が固まったら、ルールファイルを作成</p>
+                <div class="prompt-box">
+                    <h4>📋 コピペ用プロンプト</h4>
+                    <pre><code>/Generate Rules
+https://cursor.com/ja/docs/context/rules を参照して
+このプロジェクト用のルールを作成して</code></pre>
+                </div>
+                <div class="warning-box">
+                    <h4>⚠️ 開発中のルール</h4>
+                    <p>開発を進めるときは毎回<br>
+                    「<strong>cursor rulesを参照して要件定義と技術要件を確認してから進めて</strong>」<br>
+                    と指示してください</p>
+                </div>
+            </section>
+            
+            <!-- ================================ -->
+            <!-- Part 8: ローカル開発 -->
+            <!-- ================================ -->
+            
+            <!-- Slide 29: ローカル開発の流れ -->
+            <section>
+                <h2><span class="step-indicator">5</span> ローカル開発の流れ</h2>
+                <div class="card">
+                    <h4>Mac の場合</h4>
+                    <pre><code>要件定義書に従い、Homebrewで必要な環境を構築して</code></pre>
+                </div>
+                <div class="card">
+                    <h4>Windows の場合</h4>
+                    <pre><code>要件定義書に従い、WSL2 + Ubuntuで必要な環境構築をして</code></pre>
+                </div>
+                <p class="small" style="margin-top: 16px;">
+                    💡 AIが必要なツールのインストールコマンドを自動で実行してくれます
+                </p>
+            </section>
+            
+            <!-- Slide 30: 開発中のチェックポイント -->
+            <section>
+                <h2>✅ 開発中のチェックポイント</h2>
+                <ul class="checklist">
+                    <li>主要な画面（一覧・詳細・編集）が一通り動いている</li>
+                    <li>データの登録・閲覧・検索ができる</li>
+                    <li>最低限の見た目が整っている</li>
+                    <li>こまめにGitHubへコミット・プッシュできている</li>
+                </ul>
+                <div class="warning-box">
+                    <h4>💡 開発のコツ</h4>
+                    <p>開発を進める時は毎回<br>
+                    「cursor rulesを参照して要件定義と技術要件を確認してから進めて」</p>
+                </div>
+            </section>
+            
+            <!-- Slide 31: こまめなコミット -->
+            <section>
+                <h2>💾 こまめなコミット</h2>
+                <p>「セーブポイント」を作る感覚</p>
+                <div class="card">
+                    <h4>コミットのタイミング</h4>
+                    <ul>
+                        <li>1つの機能が動いたとき</li>
+                        <li>大きな変更をする前</li>
+                        <li>区切りのいいところ</li>
+                    </ul>
+                </div>
+                <div class="prompt-box">
+                    <h4>📋 コピペ用プロンプト</h4>
+                    <pre><code>この変更をGitHubにコミット・プッシュして
+コミットメッセージは「タスク一覧画面を追加」で</code></pre>
+                </div>
+            </section>
+            
+            <!-- ================================ -->
+            <!-- Part 9: デプロイ -->
+            <!-- ================================ -->
+            
+            <!-- Slide 32: デプロイとは -->
+            <section>
+                <h2><span class="step-indicator">6</span> デプロイとは</h2>
+                <div class="quote" style="font-size: 1.1em;">
+                    作ったものを<br>
+                    <span class="accent">自分の端末以外でも使える場所</span>に<br>
+                    反映して公開すること
+                </div>
+                <p class="center small" style="margin-top: 20px;">
+                    ローカル（自分のPC）→ クラウド（インターネット上）
+                </p>
+            </section>
+            
+            <!-- Slide 33: Cloud Runデプロイ -->
+            <section>
+                <h2>☁️ Cloud Runデプロイ</h2>
+                <div class="prompt-box">
+                    <h4>📋 コピペ用プロンプト</h4>
+                    <pre><code>このアプリをGCP Cloud Runにデプロイして
+CLIで設定して、コマンドの提示ではなく実行までして
+
+完了したら以下を確認して報告して：
+- デプロイしたURL
+- 環境変数が正しく設定されているか
+- 権限やセキュリティに問題がないか</code></pre>
+                </div>
+                <div class="screenshot-placeholder">
+                    Cloud Runデプロイ完了画面のスクショ
+                </div>
+            </section>
+            
+            <!-- Slide 34: 動作確認 -->
+            <section>
+                <h2>✅ 動作確認</h2>
+                <ul class="checklist">
+                    <li>デプロイしたURLにアクセスできる</li>
+                    <li>主要な機能が動作する</li>
+                    <li>データの登録・閲覧ができる</li>
+                    <li>エラーが出ていない</li>
+                </ul>
+                <div class="success-box">
+                    <h4>🎉 完了！</h4>
+                    <p>ここまで来たら、あなたのシステムは<br>
+                    世界中からアクセスできる状態になっています！</p>
+                </div>
+            </section>
+            
+            <!-- ================================ -->
+            <!-- Part 10: 成果発表 & クロージング -->
+            <!-- ================================ -->
+            
+            <!-- Slide 35: 成果発表の5項目 -->
+            <section>
+                <h2>🎤 成果発表の5項目</h2>
+                <table>
+                    <tr>
+                        <th>#</th>
+                        <th>項目</th>
+                        <th>内容</th>
+                    </tr>
+                    <tr><td>1</td><td><strong>概要</strong></td><td>どんな業務を改善するアプリか</td></tr>
+                    <tr><td>2</td><td><strong>デモ</strong></td><td>一覧・詳細・登録・検索などの実演</td></tr>
+                    <tr><td>3</td><td><strong>役割分担</strong></td><td>AIに任せた部分 vs 自分で判断した部分</td></tr>
+                    <tr><td>4</td><td><strong>苦労</strong></td><td>つまずいたポイントと解決策</td></tr>
+                    <tr><td>5</td><td><strong>展望</strong></td><td>今後どう発展させたいか</td></tr>
+                </table>
+            </section>
+            
+            <!-- Slide 36: 実践タイム -->
+            <section>
+                <h2>🚀 実践タイムの進め方</h2>
+                <ul>
+                    <li><strong>各自のペースで進める</strong><br>
+                        <span class="small">早い人は機能追加、じっくり派は基本機能を確実に</span></li>
+                    <li><strong>昼休憩は自由</strong><br>
+                        <span class="small">キリのいいところで各自取ってください</span></li>
+                    <li><strong>17:00を目安にデプロイ完了</strong><br>
+                        <span class="small">18:00から発表があります</span></li>
+                    <li><strong>困ったら壁打ち</strong><br>
+                        <span class="small">西村に声をかけてください。一緒に解決します。</span></li>
+                </ul>
+                <p class="center small" style="margin-top: 16px;">
+                    💡 質問は恥ずかしいことではありません。「早く聞く」が最速の解決策です。
+                </p>
+            </section>
+            
+            <!-- Slide 37: Let's Start! -->
+            <section class="title-slide">
+                <h1>🚀 Let's Start!</h1>
+                <p style="font-size: 1.1em; margin-top: 30px;">
+                    準備はいいですか？<br>
+                    <strong class="accent">自分の手でシステムを作りましょう！</strong>
+                </p>
+                <div style="margin-top: 50px;">
+                    <p class="small">困ったら遠慮なく声をかけてください</p>
+                </div>
+                <svg class="logo-large" style="margin-top: 30px;"><use href="#axis-logo"/></svg>
+            </section>
+            
+        </div>
+    </div>
+    
+    <!-- Logo watermark -->
+    <svg class="logo"><use href="#axis-logo"/></svg>
+    
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/reveal.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            slideNumber: 'c/t',
+            showSlideNumber: 'all',
+            transition: 'slide',
+            transitionSpeed: 'default',
+            backgroundTransition: 'fade',
+            center: false,
+            width: 1200,
+            height: 700,
+            margin: 0.04,
+            keyboard: {
+                39: 'next',
+                37: 'prev',
+                32: 'next',
+            }
+        });
+        
+        // Menu functions
+        function toggleMenu() {
+            document.querySelector('.slide-menu').classList.toggle('open');
+            document.querySelector('.menu-overlay').classList.toggle('open');
+        }
+        
+        function goToSlide(index) {
+            Reveal.slide(index);
+            toggleMenu();
+            updateActiveMenuItem();
+        }
+        
+        function updateActiveMenuItem() {
+            const currentSlide = Reveal.getIndices().h;
+            document.querySelectorAll('.slide-menu-item').forEach((item, index) => {
+                item.classList.toggle('active', index === currentSlide);
+            });
+        }
+        
+        Reveal.on('slidechanged', updateActiveMenuItem);
+        updateActiveMenuItem();
+    </script>
+</body>
+</html>
