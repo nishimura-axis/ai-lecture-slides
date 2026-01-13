@@ -686,17 +686,73 @@
             <!-- Slide 5: AI駆動開発とは -->
             <section>
                 <h2>🤖 AI駆動開発とは</h2>
-                <p style="font-size: 1em; margin-bottom: 20px;">
-                    <strong>AI Driven Development</strong>
+                <p style="font-size: 0.9em; margin-bottom: 15px;">
+                    <strong>AI Driven Development</strong> - コードを書くのはAI、人間は「監督」
                 </p>
-                <div class="card">
-                    <h4>定義</h4>
-                    <ul>
-                        <li><strong>主体</strong>：コードを書くのは<span class="accent">AI</span>。人間は書きません。</li>
-                        <li><strong>人間の役割</strong>：目的・要件・制約を決定し、設計・コードをレビューする</li>
-                        <li><strong>フィードバック</strong>：動かしてみて修正指示を出すサイクルを回す</li>
-                    </ul>
-                </div>
+                
+                <!-- AI駆動開発 図解 SVG -->
+                <svg viewBox="0 0 800 320" style="width: 100%; max-width: 750px; margin: 0 auto; display: block;">
+                    <!-- 背景 -->
+                    <defs>
+                        <linearGradient id="humanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#E8F4FD"/>
+                            <stop offset="100%" style="stop-color:#D1E9FC"/>
+                        </linearGradient>
+                        <linearGradient id="aiGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#F0E6FF"/>
+                            <stop offset="100%" style="stop-color:#E0D0FF"/>
+                        </linearGradient>
+                        <linearGradient id="arrowGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" style="stop-color:#4A7BF7"/>
+                            <stop offset="100%" style="stop-color:#8B5CF6"/>
+                        </linearGradient>
+                    </defs>
+                    
+                    <!-- 人間エリア -->
+                    <rect x="30" y="40" width="300" height="250" rx="16" fill="url(#humanGrad)" stroke="#4A7BF7" stroke-width="2"/>
+                    <text x="180" y="75" text-anchor="middle" font-size="20" font-weight="bold" fill="#2D3748">👤 人間（あなた）</text>
+                    
+                    <!-- 人間の役割 -->
+                    <rect x="50" y="95" width="260" height="35" rx="8" fill="#fff" stroke="#4A7BF7" stroke-width="1"/>
+                    <text x="180" y="118" text-anchor="middle" font-size="14" fill="#2D3748">🎯 目的・要件・制約を決める</text>
+                    
+                    <rect x="50" y="140" width="260" height="35" rx="8" fill="#fff" stroke="#4A7BF7" stroke-width="1"/>
+                    <text x="180" y="163" text-anchor="middle" font-size="14" fill="#2D3748">👀 動作確認・レビューする</text>
+                    
+                    <rect x="50" y="185" width="260" height="35" rx="8" fill="#fff" stroke="#4A7BF7" stroke-width="1"/>
+                    <text x="180" y="208" text-anchor="middle" font-size="14" fill="#2D3748">✅ 合否判定・フィードバック</text>
+                    
+                    <rect x="50" y="230" width="260" height="35" rx="8" fill="#fff" stroke="#4A7BF7" stroke-width="1"/>
+                    <text x="180" y="253" text-anchor="middle" font-size="14" fill="#2D3748">💡 業務知識を提供する</text>
+                    
+                    <!-- AIエリア -->
+                    <rect x="470" y="40" width="300" height="250" rx="16" fill="url(#aiGrad)" stroke="#8B5CF6" stroke-width="2"/>
+                    <text x="620" y="75" text-anchor="middle" font-size="20" font-weight="bold" fill="#2D3748">🤖 AI（Cursor）</text>
+                    
+                    <!-- AIの役割 -->
+                    <rect x="490" y="95" width="260" height="35" rx="8" fill="#fff" stroke="#8B5CF6" stroke-width="1"/>
+                    <text x="620" y="118" text-anchor="middle" font-size="14" fill="#2D3748">💻 コードを書く</text>
+                    
+                    <rect x="490" y="140" width="260" height="35" rx="8" fill="#fff" stroke="#8B5CF6" stroke-width="1"/>
+                    <text x="620" y="163" text-anchor="middle" font-size="14" fill="#2D3748">🗄️ DB設計・技術選定</text>
+                    
+                    <rect x="490" y="185" width="260" height="35" rx="8" fill="#fff" stroke="#8B5CF6" stroke-width="1"/>
+                    <text x="620" y="208" text-anchor="middle" font-size="14" fill="#2D3748">🔧 エラー特定・修正</text>
+                    
+                    <rect x="490" y="230" width="260" height="35" rx="8" fill="#fff" stroke="#8B5CF6" stroke-width="1"/>
+                    <text x="620" y="253" text-anchor="middle" font-size="14" fill="#2D3748">📁 ファイル構成・実装詳細</text>
+                    
+                    <!-- 双方向矢印 -->
+                    <path d="M340 130 L360 130 L360 110 L395 145 L360 180 L360 160 L340 160 Z" fill="url(#arrowGrad)"/>
+                    <path d="M460 180 L440 180 L440 200 L405 165 L440 130 L440 150 L460 150 Z" fill="url(#arrowGrad)"/>
+                    
+                    <!-- 中央テキスト -->
+                    <text x="400" y="230" text-anchor="middle" font-size="13" fill="#4A7BF7" font-weight="bold">指示</text>
+                    <text x="400" y="250" text-anchor="middle" font-size="13" fill="#8B5CF6" font-weight="bold">成果物</text>
+                    
+                    <!-- サイクル説明 -->
+                    <text x="400" y="305" text-anchor="middle" font-size="12" fill="#718096">🔄 このサイクルを繰り返して完成させる</text>
+                </svg>
             </section>
             
             <!-- Slide 6: 開発フロー全体像 -->
