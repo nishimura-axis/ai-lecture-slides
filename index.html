@@ -597,7 +597,7 @@
             <div class="slide-menu-item" onclick="goToSlide(28)">29. 要件定義とは</div>
             <div class="slide-menu-item" onclick="goToSlide(29)">30. 要件定義プロンプト</div>
             <div class="slide-menu-item" onclick="goToSlide(30)">31. .cursor/rules 作成</div>
-            <div class="slide-menu-item" onclick="goToSlide(31)">32. 開発中のルール</div>
+            <div class="slide-menu-item" onclick="goToSlide(31)">32. rulesの自動適用</div>
         </div>
         
         <div class="slide-menu-section">
@@ -1485,18 +1485,22 @@ https://cursor.com/ja/docs/context/rules
                 </div>
             </section>
             
-            <!-- Slide 28b: 開発中のルール -->
+            <!-- Slide 28b: .cursor/rules の自動適用 -->
             <section>
-                <h2>⚠️ 開発中のルール</h2>
-                <p>開発を進めるときは<strong>毎回</strong>以下を指示してください</p>
-                <div class="prompt-box">
-                    <h4>📋 コピペ用プロンプト</h4>
-                    <pre><code>cursor rulesを参照して要件定義と技術要件を確認してから進めて</code></pre>
+                <h2>✅ .cursor/rules の自動適用</h2>
+                <div class="success-box">
+                    <h4>🎉 良いニュース</h4>
+                    <p><strong>.cursor/rules に書いておけば、Cursorは自動的に参照します！</strong><br>
+                    毎回「参照して」と言う必要はありません。</p>
                 </div>
                 <div class="warning-box" style="margin-top: 20px;">
-                    <h4>💡 なぜ毎回必要？</h4>
-                    <p>AIは基本的に「記憶が浅い」ため、せっかく固めた要件を無視して開発を進めてしまう可能性があります。<br>
-                    毎回ルールを思い出させることで、一貫した開発ができます。</p>
+                    <h4>⚠️ ただし例外あり</h4>
+                    <p>長い会話の中でAIがルールを無視し始めた場合は、<br>
+                    以下のプロンプトでリマインドすると効果的です：</p>
+                </div>
+                <div class="prompt-box" style="margin-top: 15px;">
+                    <h4>📋 リマインド用プロンプト</h4>
+                    <pre><code>cursor rulesを参照して要件定義と技術要件を確認してから進めて</code></pre>
                 </div>
             </section>
             
