@@ -467,6 +467,7 @@
             border-radius: 12px;
             padding: 20px;
             margin: 16px 0;
+            position: relative;
         }
         
         .prompt-box h4 {
@@ -480,6 +481,37 @@
             background: transparent;
             padding: 0;
             box-shadow: none;
+        }
+        
+        /* Copy button */
+        .copy-btn {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: #10B981;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 12px;
+            font-weight: 500;
+            transition: all 0.2s;
+            z-index: 10;
+        }
+        
+        .copy-btn:hover {
+            background: #059669;
+            transform: scale(1.05);
+        }
+        
+        .copy-btn.copied {
+            background: #6366F1;
+        }
+        
+        .copy-btn.copied::after {
+            content: ' ✓';
         }
     </style>
 </head>
@@ -1379,6 +1411,51 @@ CLIで設定して、コマンドの提示ではなく実行までして
         
         Reveal.on('slidechanged', updateActiveMenuItem);
         updateActiveMenuItem();
+        
+        // Copy button functionality
+        function copyToClipboard(btn) {
+            const promptBox = btn.closest('.prompt-box');
+            const code = promptBox.querySelector('code');
+            const text = code.textContent;
+            
+            navigator.clipboard.writeText(text).then(() => {
+                btn.textContent = 'コピー完了';
+                btn.classList.add('copied');
+                
+                setTimeout(() => {
+                    btn.textContent = '📋 コピー';
+                    btn.classList.remove('copied');
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
+                // Fallback for older browsers
+                const textarea = document.createElement('textarea');
+                textarea.value = text;
+                document.body.appendChild(textarea);
+                textarea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textarea);
+                
+                btn.textContent = 'コピー完了';
+                btn.classList.add('copied');
+                
+                setTimeout(() => {
+                    btn.textContent = '📋 コピー';
+                    btn.classList.remove('copied');
+                }, 2000);
+            });
+        }
+        
+        // Add copy buttons to all prompt boxes
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.prompt-box').forEach(box => {
+                const btn = document.createElement('button');
+                btn.className = 'copy-btn';
+                btn.textContent = '📋 コピー';
+                btn.onclick = function() { copyToClipboard(this); };
+                box.appendChild(btn);
+            });
+        });
     </script>
 </body>
 </html>
