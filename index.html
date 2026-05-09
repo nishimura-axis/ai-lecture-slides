@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AIシステム開発講義 - AXIS</title>
+    <title>AIシステム開発講義</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/reveal.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/theme/white.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,23 +11,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --axis-blue: #4A7BF7;
-            --axis-dark: #2D3748;
-            --axis-gray: #718096;
-            --axis-light: #F7FAFC;
-            --axis-white: #FFFFFF;
+            --brand-blue: #4A7BF7;
+            --brand-dark: #2D3748;
+            --brand-gray: #718096;
+            --brand-light: #F7FAFC;
+            --brand-white: #FFFFFF;
         }
         
         .reveal {
             font-family: 'Noto Sans JP', sans-serif;
             font-size: 32px;
-            color: var(--axis-dark);
+            color: var(--brand-dark);
         }
         
         .reveal h1, .reveal h2, .reveal h3 {
             font-family: 'Noto Sans JP', sans-serif;
             font-weight: 700;
-            color: var(--axis-dark);
+            color: var(--brand-dark);
             text-transform: none;
         }
         
@@ -43,7 +43,7 @@
         
         .reveal h3 {
             font-size: 1.1em;
-            color: var(--axis-gray);
+            color: var(--brand-gray);
         }
         
         .reveal .slides {
@@ -55,7 +55,7 @@
         }
         
         .reveal .slide-background {
-            background: var(--axis-white);
+            background: var(--brand-white);
         }
         
         /* Title slide */
@@ -84,7 +84,7 @@
         
         /* Accent color */
         .accent {
-            color: var(--axis-blue);
+            color: var(--brand-blue);
         }
         
         .highlight {
@@ -94,11 +94,11 @@
         
         /* Cards */
         .card {
-            background: var(--axis-light);
+            background: var(--brand-light);
             border-radius: 12px;
             padding: 20px;
             margin: 12px 0;
-            border-left: 4px solid var(--axis-blue);
+            border-left: 4px solid var(--brand-blue);
         }
         
         .card-grid {
@@ -110,14 +110,14 @@
         
         .card h4 {
             margin: 0 0 10px 0;
-            color: var(--axis-blue);
+            color: var(--brand-blue);
             font-size: 0.85em;
         }
         
         .card p, .card ul {
             margin: 0;
             font-size: 0.8em;
-            color: var(--axis-gray);
+            color: var(--brand-gray);
         }
         
         .card ul {
@@ -145,7 +145,7 @@
         }
         
         .reveal table th {
-            background: var(--axis-blue);
+            background: var(--brand-blue);
             color: white;
             padding: 10px 14px;
             text-align: left;
@@ -158,7 +158,7 @@
         }
         
         .reveal table tr:nth-child(even) {
-            background: var(--axis-light);
+            background: var(--brand-light);
         }
         
         /* Code blocks */
@@ -174,7 +174,7 @@
         
         .reveal code {
             font-family: 'Monaco', 'Consolas', monospace;
-            background: var(--axis-light);
+            background: var(--brand-light);
             padding: 2px 6px;
             border-radius: 4px;
             font-size: 0.85em;
@@ -192,14 +192,14 @@
             font-weight: 500;
             text-align: center;
             padding: 30px;
-            color: var(--axis-dark);
+            color: var(--brand-dark);
             line-height: 1.6;
         }
         
         .quote::before {
             content: '"';
             font-size: 2em;
-            color: var(--axis-blue);
+            color: var(--brand-blue);
             display: block;
             margin-bottom: -20px;
         }
@@ -215,7 +215,7 @@
         
         .phase {
             flex: 1;
-            background: var(--axis-light);
+            background: var(--brand-light);
             border-radius: 12px;
             padding: 16px;
             text-align: center;
@@ -224,19 +224,19 @@
         .phase h4 {
             font-size: 0.75em;
             margin: 0 0 6px 0;
-            color: var(--axis-blue);
+            color: var(--brand-blue);
         }
         
         .phase p {
             font-size: 0.7em;
             margin: 0;
-            color: var(--axis-gray);
+            color: var(--brand-gray);
         }
         
         .arrow {
             display: flex;
             align-items: center;
-            color: var(--axis-blue);
+            color: var(--brand-blue);
             font-size: 1.3em;
         }
         
@@ -256,14 +256,14 @@
             content: '☐';
             position: absolute;
             left: 0;
-            color: var(--axis-blue);
+            color: var(--brand-blue);
             font-size: 1.1em;
         }
         
         /* Step indicator */
         .step-indicator {
             display: inline-block;
-            background: var(--axis-blue);
+            background: var(--brand-blue);
             color: white;
             width: 32px;
             height: 32px;
@@ -286,7 +286,7 @@
         /* Small text */
         .small {
             font-size: 0.7em;
-            color: var(--axis-gray);
+            color: var(--brand-gray);
         }
         
         /* Center */
@@ -300,7 +300,7 @@
             border-radius: 12px;
             padding: 40px 30px;
             text-align: center;
-            color: var(--axis-gray);
+            color: var(--brand-gray);
             border: 2px dashed #A0AEC0;
             margin: 16px 0;
             font-size: 0.8em;
@@ -319,7 +319,7 @@
             top: 20px;
             right: 20px;
             z-index: 100;
-            background: var(--axis-blue);
+            background: var(--brand-blue);
             color: white;
             border: none;
             padding: 10px 16px;
@@ -355,7 +355,7 @@
         .slide-menu h3 {
             margin: 0 0 20px 0;
             padding-bottom: 10px;
-            border-bottom: 2px solid var(--axis-blue);
+            border-bottom: 2px solid var(--brand-blue);
             font-size: 1em;
         }
         
@@ -367,7 +367,7 @@
             border: none;
             font-size: 24px;
             cursor: pointer;
-            color: var(--axis-gray);
+            color: var(--brand-gray);
         }
         
         .slide-menu-section {
@@ -375,18 +375,18 @@
         }
         
         .slide-menu-section h4 {
-            color: var(--axis-blue);
+            color: var(--brand-blue);
             font-size: 0.8em;
             margin: 0 0 8px 0;
             padding: 8px;
-            background: var(--axis-light);
+            background: var(--brand-light);
             border-radius: 6px;
         }
         
         .slide-menu-item {
             display: block;
             padding: 8px 12px;
-            color: var(--axis-dark);
+            color: var(--brand-dark);
             text-decoration: none;
             font-size: 0.75em;
             border-radius: 6px;
@@ -395,11 +395,11 @@
         }
         
         .slide-menu-item:hover {
-            background: var(--axis-light);
+            background: var(--brand-light);
         }
         
         .slide-menu-item.active {
-            background: var(--axis-blue);
+            background: var(--brand-blue);
             color: white;
         }
         
@@ -516,19 +516,11 @@
     </style>
 </head>
 <body>
-    <!-- Logo SVG - AXIS -->
+    <!-- Generic wordmark -->
     <svg style="display:none">
-        <symbol id="axis-logo" viewBox="0 0 140 40">
-            <!-- A -->
-            <path d="M0 36 L12 4 L24 36 L19 36 L16 27 L8 27 L5 36 Z M12 10 L9 23 L15 23 Z" fill="#2D3748"/>
-            <!-- Blue accent inside A -->
-            <polygon points="12,18 14,24 10,24" fill="#4A7BF7"/>
-            <!-- X -->
-            <path d="M30 4 L40 18 L30 36 L36 36 L43 24 L50 36 L56 36 L46 18 L56 4 L50 4 L43 14 L36 4 Z" fill="#2D3748"/>
-            <!-- I -->
-            <rect x="62" y="4" width="6" height="32" fill="#2D3748"/>
-            <!-- S -->
-            <path d="M76 10 C76 6 80 4 86 4 C92 4 96 6 96 10 L96 12 L90 12 L90 10 C90 8 88 7 86 7 C84 7 82 8 82 10 C82 12 84 13 88 14 C94 16 96 18 96 24 C96 30 92 36 86 36 C80 36 76 32 76 26 L76 24 L82 24 L82 26 C82 28 84 30 86 30 C88 30 90 28 90 26 C90 24 88 22 84 20 C78 18 76 16 76 10 Z" fill="#2D3748"/>
+        <symbol id="generic-logo" viewBox="0 0 180 40">
+            <rect x="0" y="4" width="180" height="32" rx="16" fill="#EEF4FF"/>
+            <text x="90" y="27" text-anchor="middle" font-size="18" font-weight="700" fill="#2D3748">AI DEV</text>
         </symbol>
     </svg>
 
@@ -564,52 +556,54 @@
             <div class="slide-menu-item" onclick="goToSlide(8)">9. 開発フロー（6ステップ）</div>
             <div class="slide-menu-item" onclick="goToSlide(9)">10. 技術スタック一覧</div>
             <div class="slide-menu-item" onclick="goToSlide(10)">11. AIとのコミュニケーション</div>
-            <div class="slide-menu-item" onclick="goToSlide(11)">12. .cursor/rules の重要性</div>
+            <div class="slide-menu-item" onclick="goToSlide(11)">12. CLAUDE.md の重要性</div>
             <div class="slide-menu-item" onclick="goToSlide(12)">13. エラー対応の5原則</div>
         </div>
         
         <div class="slide-menu-section">
-            <h4>Part 4: Cursorセットアップ</h4>
-            <div class="slide-menu-item" onclick="goToSlide(13)">14. Cursorとは</div>
-            <div class="slide-menu-item" onclick="goToSlide(14)">15. インストール手順</div>
-            <div class="slide-menu-item" onclick="goToSlide(15)">16. 初期設定</div>
-            <div class="slide-menu-item" onclick="goToSlide(16)">17-18. Auto-Run Mode設定</div>
+            <h4>Part 4: Claude Codeセットアップ</h4>
+            <div class="slide-menu-item" onclick="goToSlide(13)">14. Claude Codeとは</div>
+            <div class="slide-menu-item" onclick="goToSlide(14)">15. 事前準備</div>
+            <div class="slide-menu-item" onclick="goToSlide(15)">16. 最初に開くフォルダ</div>
+            <div class="slide-menu-item" onclick="goToSlide(16)">17-18. Plan → Execute</div>
         </div>
         
         <div class="slide-menu-section">
             <h4>Part 5: GitHubセットアップ</h4>
             <div class="slide-menu-item" onclick="goToSlide(18)">19. GitHubとは</div>
             <div class="slide-menu-item" onclick="goToSlide(19)">20. アカウント作成</div>
-            <div class="slide-menu-item" onclick="goToSlide(20)">21-23. アクセストークン取得</div>
+            <div class="slide-menu-item" onclick="goToSlide(20)">21. リポジトリ作成</div>
+            <div class="slide-menu-item" onclick="goToSlide(21)">22. 初回保存の考え方</div>
+            <div class="slide-menu-item" onclick="goToSlide(22)">23. GitHub連携プロンプト</div>
             <div class="slide-menu-item" onclick="goToSlide(23)">24. 初回プッシュ用プロンプト</div>
         </div>
         
         <div class="slide-menu-section">
-            <h4>Part 6: Google Cloudセットアップ</h4>
-            <div class="slide-menu-item" onclick="goToSlide(24)">25. Google Cloudとは</div>
-            <div class="slide-menu-item" onclick="goToSlide(25)">26. 組織内メンバーの設定</div>
-            <div class="slide-menu-item" onclick="goToSlide(26)">27. 組織外メンバーの設定</div>
-            <div class="slide-menu-item" onclick="goToSlide(27)">28. CLI接続テスト</div>
+            <h4>Part 6: 公開・共有の考え方</h4>
+            <div class="slide-menu-item" onclick="goToSlide(24)">25. 公開は目的で選ぶ</div>
+            <div class="slide-menu-item" onclick="goToSlide(25)">26. 小さく検証する</div>
+            <div class="slide-menu-item" onclick="goToSlide(26)">27. 公開前チェック</div>
+            <div class="slide-menu-item" onclick="goToSlide(27)">28. 運用前チェック</div>
         </div>
         
         <div class="slide-menu-section">
             <h4>Part 7: 要件定義・技術要件</h4>
             <div class="slide-menu-item" onclick="goToSlide(28)">29. 要件定義とは</div>
             <div class="slide-menu-item" onclick="goToSlide(29)">30. 要件定義プロンプト</div>
-            <div class="slide-menu-item" onclick="goToSlide(30)">31. .cursor/rules 作成</div>
-            <div class="slide-menu-item" onclick="goToSlide(31)">32. rulesの自動適用</div>
+            <div class="slide-menu-item" onclick="goToSlide(30)">31. CLAUDE.md 作成</div>
+            <div class="slide-menu-item" onclick="goToSlide(31)">32. ルールの参照</div>
         </div>
         
         <div class="slide-menu-section">
-            <h4>Part 8: ローカル開発</h4>
+            <h4>Part 8: AI実装</h4>
             <div class="slide-menu-item" onclick="goToSlide(32)">33. チェックポイント</div>
             <div class="slide-menu-item" onclick="goToSlide(33)">34. こまめなコミット</div>
         </div>
         
         <div class="slide-menu-section">
-            <h4>Part 9: デプロイ</h4>
-            <div class="slide-menu-item" onclick="goToSlide(34)">35. デプロイとは</div>
-            <div class="slide-menu-item" onclick="goToSlide(35)">36. Cloud Runデプロイ</div>
+            <h4>Part 9: 共有・運用</h4>
+            <div class="slide-menu-item" onclick="goToSlide(34)">35. 共有とは</div>
+            <div class="slide-menu-item" onclick="goToSlide(35)">36. 共有依頼プロンプト</div>
             <div class="slide-menu-item" onclick="goToSlide(36)">37. 動作確認</div>
         </div>
         
@@ -633,21 +627,21 @@
             
             <!-- Slide 1: タイトル -->
             <section class="title-slide">
-                <svg class="logo-large"><use href="#axis-logo"/></svg>
+                <svg class="logo-large"><use href="#generic-logo"/></svg>
                 <h1>AIシステム開発講義</h1>
-                <h3>〜 自分の手でシステムを作る 〜</h3>
-                <p class="small" style="margin-top: 60px;">2026年1月14日（火）</p>
+                <h3>〜 Claude Codeで業務を小さな道具に変える 〜</h3>
+                <p class="small" style="margin-top: 60px;">社外共有用・汎用版</p>
             </section>
             
             <!-- Slide 2: 今日のゴール -->
             <section>
                 <h2>🎯 今日のゴール</h2>
                 <div class="quote">
-                    システムを1つ完成させる<br>
-                    <span class="highlight">（デプロイまで）</span>
+                    業務課題を1つ<br>
+                    <span class="highlight">AI駆動開発の型</span>で形にする
                 </div>
                 <p class="center small" style="margin-top: 30px;">
-                    「動くものを作って、世界に公開する」を体験する1日
+                    完成版を急ぐ日ではなく、AIに仕事を渡し、レビューし、改善する流れを体験する日
                 </p>
             </section>
             
@@ -655,38 +649,38 @@
             <section>
                 <h2>💡 今日一番伝えたいこと</h2>
                 <div class="quote">
-                    エンジニアに頼むしかない<br>
-                    と思っていたことが、<br>
-                    <span class="accent">AIを使えば自分でできる</span>
+                    AIに丸投げするのではなく、<br>
+                    目的・制約・判断を握って<br>
+                    <span class="accent">実行をClaude Codeに任せる</span>
                 </div>
             </section>
             
             <!-- Slide 4: 今日の流れ -->
             <section>
-                <h2>📅 今日の流れ</h2>
+                <h2>🧭 この資料の使い方</h2>
                 <table>
                     <tr>
-                        <th>時間</th>
+                        <th>パート</th>
                         <th>内容</th>
-                        <th>形式</th>
+                        <th>目的</th>
                     </tr>
                     <tr>
-                        <td><strong>10:00-12:00</strong></td>
-                        <td>座学（この資料）</td>
-                        <td>講義</td>
+                        <td><strong>考え方</strong></td>
+                        <td>AI駆動開発の役割分担</td>
+                        <td>人間が握る判断を理解する</td>
                     </tr>
                     <tr>
-                        <td><strong>12:00-18:00</strong></td>
-                        <td>実践開発</td>
-                        <td>各自作業 + 壁打ち</td>
+                        <td><strong>要件定義</strong></td>
+                        <td>入力・処理・出力に分解</td>
+                        <td>Claude Codeに渡せる形にする</td>
                     </tr>
                     <tr>
-                        <td><strong>18:00-19:00</strong></td>
-                        <td>成果発表</td>
-                        <td>発表会</td>
+                        <td><strong>実装</strong></td>
+                        <td>Plan → Executeで作る</td>
+                        <td>確認しながら改善する</td>
                     </tr>
                 </table>
-                <p class="small">※ 昼休憩は各自自由に取ってください</p>
+                <p class="small">※ 実際の時間割は、参加者のリテラシーやテーマに合わせて調整してください。</p>
             </section>
             
             <!-- ================================ -->
@@ -741,7 +735,7 @@
                     
                     <!-- AIエリア -->
                     <rect x="480" y="30" width="300" height="260" rx="16" fill="url(#aiGrad)" stroke="#8B5CF6" stroke-width="2"/>
-                    <text x="630" y="65" text-anchor="middle" font-size="20" font-weight="bold" fill="#2D3748">🤖 AI（Cursor）</text>
+                    <text x="630" y="65" text-anchor="middle" font-size="20" font-weight="bold" fill="#2D3748">🤖 AI（Claude Code）</text>
                     
                     <!-- AIの役割 -->
                     <rect x="500" y="85" width="260" height="38" rx="8" fill="#fff" stroke="#8B5CF6" stroke-width="1"/>
@@ -793,15 +787,15 @@
                     <div class="arrow">→</div>
                     <div class="phase">
                         <h4>フェーズ3</h4>
-                        <p><strong>公開</strong></p>
+                        <p><strong>共有・運用</strong></p>
                         <p style="margin-top: 8px; font-size: 0.6em;">
-                            🚀 デプロイ<br>
-                            🌍 世界中へお届け！
+                            ✅ 使える形に整える<br>
+                            🔄 改善サイクルへ
                         </p>
                     </div>
                 </div>
                 <p class="center small">
-                    人間（発注者）→ AI（コーダー）→ 人間（テスター）→ 公開
+                    人間（判断者）→ AI（実行者）→ 人間（レビュアー）→ 改善
                 </p>
             </section>
             
@@ -821,10 +815,10 @@
                     <div class="card">
                         <h4>🤖 AIの役割</h4>
                         <ul>
-                            <li>Next.js等のコード記述</li>
-                            <li>DB設計</li>
-                            <li>エラー原因の特定・修正</li>
-                            <li>技術的な実装詳細の決定</li>
+                            <li>実装案の提案</li>
+                            <li>コード作成・修正</li>
+                            <li>エラー原因の特定</li>
+                            <li>テストと改善案の提示</li>
                         </ul>
                     </div>
                 </div>
@@ -859,25 +853,25 @@
             
             <!-- Slide 9: 開発フロー（6ステップ） -->
             <section>
-                <h2>🗺 開発フロー（6ステップ）</h2>
+                <h2>🗺 AI駆動開発の6ステップ</h2>
                 <table>
                     <tr>
                         <th>Step</th>
                         <th>内容</th>
-                        <th>目安時間</th>
+                        <th>人間が握ること</th>
                     </tr>
-                    <tr><td><span class="step-indicator">1</span></td><td>Cursorセットアップ</td><td>20分</td></tr>
-                    <tr><td><span class="step-indicator">2</span></td><td>GitHubセットアップ</td><td>20分</td></tr>
-                    <tr><td><span class="step-indicator">3</span></td><td>Google Cloudセットアップ</td><td>20分</td></tr>
-                    <tr><td><span class="step-indicator">4</span></td><td>要件定義・技術要件作成</td><td>2時間</td></tr>
-                    <tr><td><span class="step-indicator">5</span></td><td>ローカル開発</td><td>3時間</td></tr>
-                    <tr><td><span class="step-indicator">6</span></td><td>デプロイ</td><td>1時間</td></tr>
+                    <tr><td><span class="step-indicator">1</span></td><td>課題を1つ選ぶ</td><td>何を解決するか</td></tr>
+                    <tr><td><span class="step-indicator">2</span></td><td>入力・処理・出力に分解</td><td>完成条件</td></tr>
+                    <tr><td><span class="step-indicator">3</span></td><td>制約とルールをCLAUDE.mdに書く</td><td>守らせたい判断基準</td></tr>
+                    <tr><td><span class="step-indicator">4</span></td><td>Claude Codeに計画を出させる</td><td>採用する方針</td></tr>
+                    <tr><td><span class="step-indicator">5</span></td><td>実装・検証を回す</td><td>OK/NGの判定</td></tr>
+                    <tr><td><span class="step-indicator">6</span></td><td>共有・運用に乗せる</td><td>使い続ける条件</td></tr>
                 </table>
             </section>
             
             <!-- Slide 10: 技術スタック一覧 -->
             <section>
-                <h2>🛠 今日使う技術スタック</h2>
+                <h2>🛠 代表的な技術スタック</h2>
                 <table>
                     <tr>
                         <th>カテゴリ</th>
@@ -885,14 +879,14 @@
                         <th>役割</th>
                     </tr>
                     <tr>
-                        <td>エディタ + AI</td>
-                        <td><strong>Cursor</strong></td>
-                        <td>コードを書く場所 & AIと対話</td>
+                        <td>AI開発エージェント</td>
+                        <td><strong>Claude Code</strong></td>
+                        <td>計画・実装・修正を依頼する相手</td>
                     </tr>
                     <tr>
-                        <td>フレームワーク</td>
-                        <td><strong>Next.js</strong></td>
-                        <td>Webアプリの骨組み</td>
+                        <td>画面・アプリ</td>
+                        <td><strong>Next.js / HTML / Python</strong></td>
+                        <td>作りたいものに合わせて選ぶ</td>
                     </tr>
                     <tr>
                         <td>バージョン管理</td>
@@ -900,14 +894,14 @@
                         <td>コードの保存・履歴管理</td>
                     </tr>
                     <tr>
-                        <td>データベース</td>
-                        <td><strong>PostgreSQL + Prisma</strong></td>
-                        <td>データの保存</td>
+                        <td>データ保存</td>
+                        <td><strong>CSV / JSON / PostgreSQL</strong></td>
+                        <td>扱うデータ量と用途で選ぶ</td>
                     </tr>
                     <tr>
-                        <td>デプロイ先</td>
-                        <td><strong>GCP Cloud Run</strong></td>
-                        <td>世界に公開</td>
+                        <td>共有先</td>
+                        <td><strong>個人利用 / チーム共有 / クラウド</strong></td>
+                        <td>誰が使うかで決める</td>
                     </tr>
                 </table>
             </section>
@@ -933,9 +927,9 @@
                 </div>
             </section>
             
-            <!-- Slide 12: .cursor/rules の重要性 -->
+            <!-- Slide 12: CLAUDE.md の重要性 -->
             <section>
-                <h2>📋 .cursor/rules の重要性</h2>
+                <h2>📋 CLAUDE.md の重要性</h2>
                 <div class="warning-box">
                     <h4>⚠️ AIの弱点</h4>
                     <p><strong>AIは基本的に「記憶が浅い」</strong><br>
@@ -943,8 +937,8 @@
                 </div>
                 <div class="success-box">
                     <h4>✅ 解決策</h4>
-                    <p>開発時は<strong>必ず .cursor/rules を参照してから作成する</strong>ことをルールにする<br>
-                    → AIに毎回「このプロジェクトのルール」を思い出させる</p>
+                    <p>プロジェクトの前提・制約・進め方を<strong>CLAUDE.md</strong>にまとめる<br>
+                    → Claude Codeに毎回「このプロジェクトの判断基準」を思い出させる</p>
                 </div>
             </section>
             
@@ -961,175 +955,99 @@
                     <li><strong>諦めるな、AIに聞け</strong><br>
                         <span class="small">同じエラーでも聞き方を変えると解決することがある</span></li>
                     <li><strong>困ったら壁打ち</strong><br>
-                        <span class="small">今日は西村がいます。遠慮なく聞いてください。</span></li>
+                        <span class="small">講師やチームメンバーに、早めに状況を共有してください。</span></li>
                 </ul>
             </section>
             
             <!-- ================================ -->
-            <!-- Part 4: Cursorセットアップ -->
+            <!-- Part 4: Claude Codeセットアップ -->
             <!-- ================================ -->
             
-            <!-- Slide 14: Cursorとは -->
+            <!-- Slide 14: Claude Codeとは -->
             <section>
-                <h2><span class="step-indicator">1</span> Cursorとは</h2>
+                <h2><span class="step-indicator">1</span> Claude Codeとは</h2>
                 <div class="card">
-                    <h4>💻 AIが住んでいるエディタ</h4>
+                    <h4>💻 開発作業を任せるAIエージェント</h4>
                     <ul>
-                        <li>コードを書く場所（VS Codeベース）</li>
-                        <li>AIに指示を出してコードを書いてもらう</li>
-                        <li>エラーの原因特定・修正もAIに任せられる</li>
+                        <li>プロジェクトのファイルを読み、必要な変更を提案・実行できる</li>
+                        <li>ターミナルでコマンドを実行し、エラー原因を調査できる</li>
+                        <li>要件定義・実装・テスト・修正を一連の流れで進められる</li>
                     </ul>
                 </div>
                 <p class="small" style="margin-top: 20px;">
-                    公式サイト：<a href="https://cursor.com/ja" target="_blank">https://cursor.com/ja</a>
+                    ポイントは「質問するAI」ではなく「作業を進めるAI」として扱うことです。
                 </p>
             </section>
             
-            <!-- Slide 15: Cursorインストール手順 -->
+            <!-- Slide 15: Claude Code事前準備 -->
             <section>
-                <h2>💻 Cursorインストール手順</h2>
+                <h2>💻 Claude Code事前準備</h2>
                 <table>
-                    <tr><th>Step</th><th>操作</th></tr>
-                    <tr><td>1</td><td><a href="https://cursor.com/ja" target="_blank">cursor.com/ja</a> にアクセス</td></tr>
-                    <tr><td>2</td><td>「macOS版をダウンロード」をクリック</td></tr>
-                    <tr><td>3</td><td>インストーラーを実行</td></tr>
-                    <tr><td>4</td><td>アカウント作成（Google連携OK）</td></tr>
+                    <tr><th>項目</th><th>確認すること</th></tr>
+                    <tr><td>Claude Code</td><td>インストール・ログインが完了している</td></tr>
+                    <tr><td>GitHub</td><td>リポジトリを作成・共有できる</td></tr>
+                    <tr><td>開発環境</td><td>必要に応じて Node.js / Python を使える</td></tr>
+                    <tr><td>作業フォルダ</td><td>今回のプロジェクト専用フォルダを用意する</td></tr>
                 </table>
             </section>
             
-            <!-- Slide 16: Cursor初期設定 -->
+            <!-- Slide 16: 最初に開くフォルダ -->
             <section>
-                <h2>⚙️ Cursor初期設定</h2>
+                <h2>⚙️ 最初に開くフォルダ</h2>
                 <table>
-                    <tr><th>設定項目</th><th>内容</th></tr>
-                    <tr><td><strong>課金</strong></td><td>$20/月 の Pro プランに加入</td></tr>
-                    <tr><td><strong>フォルダ作成</strong></td><td>プロジェクト用フォルダを作成して開く</td></tr>
-                    <tr><td><strong>モデル選択</strong></td><td><strong>Opus</strong> を選択（慣れてきたら他も試す）</td></tr>
+                    <tr><th>やること</th><th>理由</th></tr>
+                    <tr><td><strong>専用フォルダで始める</strong></td><td>AIの作業範囲を明確にする</td></tr>
+                    <tr><td><strong>不要なファイルを混ぜない</strong></td><td>誤読・誤編集を減らす</td></tr>
+                    <tr><td><strong>README / docs を置く</strong></td><td>目的・要件・使い方を残す</td></tr>
                 </table>
                 <p class="small" style="margin-top: 16px;">
-                    💡 Proプランで最新のAIモデルが使い放題になります
+                    💡 Claude Codeには「このフォルダの中で作業してほしい」と明確に渡します。
                 </p>
             </section>
             
-            <!-- Slide 17: Auto-Run Mode設定 - Step 1 -->
+            <!-- Slide 17: Plan → Execute -->
             <section>
-                <h2>⚡ Auto-Run Mode設定（Step 1）</h2>
-                <p style="font-size: 0.85em; margin-bottom: 15px;">AIがコマンドを自動実行できるようにする設定</p>
-                
-                <p style="font-size: 0.75em; margin-bottom: 10px;"><strong>Step 1-2:</strong> Cursor → Preferences → Cursor Settings</p>
-                
-                <!-- Cursor Menu SVG -->
-                <svg viewBox="0 0 700 350" style="width: 100%; max-width: 650px; margin: 0 auto; display: block;">
-                    <!-- macOS Menu Bar -->
-                    <rect x="0" y="0" width="700" height="30" fill="#3d3d3d"/>
-                    <text x="25" y="20" font-size="14" fill="#fff"></text>
-                    <rect x="55" y="5" width="60" height="20" fill="#4A7BF7" rx="4"/>
-                    <text x="68" y="19" font-size="12" fill="#fff" font-weight="bold">Cursor</text>
-                    <text x="130" y="20" font-size="12" fill="#ccc">File</text>
-                    <text x="165" y="20" font-size="12" fill="#ccc">Edit</text>
-                    <text x="200" y="20" font-size="12" fill="#ccc">Selection</text>
-                    <text x="265" y="20" font-size="12" fill="#ccc">View</text>
-                    <text x="305" y="20" font-size="12" fill="#ccc">Go</text>
-                    <text x="335" y="20" font-size="12" fill="#ccc">Run</text>
-                    <text x="375" y="20" font-size="12" fill="#ccc">Terminal</text>
-                    
-                    <!-- Cursor Dropdown Menu -->
-                    <rect x="55" y="35" width="200" height="220" fill="#fff" stroke="#d0d7de" rx="6" filter="drop-shadow(0 4px 8px rgba(0,0,0,0.15))"/>
-                    <text x="75" y="60" font-size="12" fill="#1f2328">About Cursor</text>
-                    <text x="75" y="85" font-size="12" fill="#1f2328">Restart to Update</text>
-                    <line x1="65" y1="100" x2="245" y2="100" stroke="#e1e4e8"/>
-                    <rect x="65" y="108" width="180" height="28" fill="#f0f0f0"/>
-                    <text x="75" y="127" font-size="12" fill="#1f2328">Preferences</text>
-                    <text x="220" y="127" font-size="12" fill="#656d76">▶</text>
-                    <line x1="65" y1="145" x2="245" y2="145" stroke="#e1e4e8"/>
-                    <text x="75" y="165" font-size="12" fill="#1f2328">Services</text>
-                    <text x="220" y="165" font-size="12" fill="#656d76">▶</text>
-                    <line x1="65" y1="180" x2="245" y2="180" stroke="#e1e4e8"/>
-                    <text x="75" y="200" font-size="12" fill="#656d76">Hide Cursor</text>
-                    <text x="190" y="200" font-size="10" fill="#656d76">⌘H</text>
-                    <text x="75" y="222" font-size="12" fill="#656d76">Hide Others</text>
-                    <text x="75" y="244" font-size="12" fill="#656d76">Quit Cursor</text>
-                    <text x="190" y="244" font-size="10" fill="#656d76">⌘Q</text>
-                    
-                    <!-- Preferences Submenu -->
-                    <rect x="260" y="95" width="230" height="250" fill="#fff" stroke="#d0d7de" rx="6" filter="drop-shadow(0 4px 8px rgba(0,0,0,0.15))"/>
-                    <text x="280" y="125" font-size="12" fill="#1f2328">Profiles</text>
-                    <rect x="270" y="138" width="210" height="28" fill="#4A7BF7" rx="4"/>
-                    <text x="285" y="157" font-size="12" fill="#fff" font-weight="bold">Cursor Settings</text>
-                    <text x="280" y="185" font-size="12" fill="#1f2328">VS Code Settings</text>
-                    <text x="430" y="185" font-size="10" fill="#656d76">⌘,</text>
-                    <text x="280" y="210" font-size="12" fill="#1f2328">Extensions</text>
-                    <text x="405" y="210" font-size="10" fill="#656d76">⇧⌘X</text>
-                    <text x="280" y="235" font-size="12" fill="#1f2328">Keyboard Shortcuts</text>
-                    <text x="280" y="260" font-size="12" fill="#1f2328">Configure Snippets</text>
-                    <text x="280" y="285" font-size="12" fill="#1f2328">Tasks</text>
-                    <line x1="270" y1="300" x2="480" y2="300" stroke="#e1e4e8"/>
-                    <text x="280" y="320" font-size="12" fill="#1f2328">Online Services Settings</text>
-                    
-                    <!-- Arrow indicator -->
-                    <path d="M505 155 L530 155 L530 145 L555 160 L530 175 L530 165 L505 165 Z" fill="#4A7BF7"/>
-                </svg>
+                <h2>⚡ Plan → Execute の基本</h2>
+                <div class="two-col">
+                    <div class="card">
+                        <h4>1. Plan</h4>
+                        <ul>
+                            <li>いきなり作らせない</li>
+                            <li>理解・方針・手順を出させる</li>
+                            <li>人間が採用/却下を判断する</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h4>2. Execute</h4>
+                        <ul>
+                            <li>合意した範囲だけ実装させる</li>
+                            <li>テスト・動作確認まで依頼する</li>
+                            <li>結果を見て次の指示を出す</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="warning-box" style="margin-top: 20px;">
+                    <h4>重要</h4>
+                    <p>AI駆動開発は「AIが勝手に作る」ではなく、<strong>人間が判断し、AIが実行する</strong>進め方です。</p>
+                </div>
             </section>
             
-            <!-- Slide 17b: Auto-Run Mode設定 - Step 2 -->
+            <!-- Slide 17b: 最初の依頼テンプレート -->
             <section>
-                <h2>⚡ Auto-Run Mode設定（Step 2）</h2>
-                <p style="font-size: 0.75em; margin-bottom: 10px;"><strong>Step 3-4:</strong> Agents → Auto-Run Mode → Run Everything</p>
-                
-                <!-- Cursor Settings Panel SVG -->
-                <svg viewBox="0 0 750 300" style="width: 100%; max-width: 700px; margin: 0 auto; display: block;">
-                    <!-- Window Frame -->
-                    <rect x="0" y="0" width="750" height="300" fill="#1e1e1e" rx="8"/>
-                    
-                    <!-- Tab Bar -->
-                    <rect x="0" y="0" width="750" height="40" fill="#2d2d2d" rx="8"/>
-                    <rect x="0" y="30" width="750" height="10" fill="#2d2d2d"/>
-                    <text x="70" y="26" font-size="12" fill="#888">🌐 Browser</text>
-                    <rect x="140" y="8" width="150" height="26" fill="#1e1e1e" rx="4"/>
-                    <text x="155" y="26" font-size="12" fill="#fff">⚙ Cursor Settings</text>
-                    <text x="275" y="26" font-size="12" fill="#888">×</text>
-                    
-                    <!-- Left Sidebar -->
-                    <rect x="0" y="40" width="180" height="260" fill="#252526"/>
-                    <circle cx="30" cy="75" r="16" fill="#3d3d3d"/>
-                    <text x="30" y="80" text-anchor="middle" font-size="14" fill="#888">N</text>
-                    <text x="55" y="72" font-size="11" fill="#ccc">nishimura@...</text>
-                    <text x="55" y="88" font-size="10" fill="#888">Ultra Plan</text>
-                    
-                    <rect x="15" y="110" width="150" height="26" fill="#3d3d3d" rx="4"/>
-                    <text x="25" y="127" font-size="11" fill="#888">Search settings ⌘F</text>
-                    
-                    <text x="30" y="160" font-size="12" fill="#888">⚙ General</text>
-                    <rect x="10" y="170" width="160" height="28" fill="#4A7BF7" rx="4"/>
-                    <text x="30" y="189" font-size="12" fill="#fff" font-weight="bold">∞ Agents</text>
-                    <text x="30" y="218" font-size="12" fill="#888">→ Tab</text>
-                    <text x="30" y="245" font-size="12" fill="#888">◇ Models</text>
-                    
-                    <!-- Right Content -->
-                    <rect x="180" y="40" width="570" height="260" fill="#1e1e1e"/>
-                    
-                    <text x="210" y="80" font-size="16" fill="#fff" font-weight="bold">Auto-Run</text>
-                    <line x1="210" y1="95" x2="700" y2="95" stroke="#3d3d3d"/>
-                    
-                    <text x="210" y="130" font-size="14" fill="#fff" font-weight="bold">Auto-Run Mode</text>
-                    <text x="210" y="155" font-size="11" fill="#888">Choose how Agent runs tools like</text>
-                    <text x="210" y="172" font-size="11" fill="#888">command execution, MCP, and file writes.</text>
-                    
-                    <!-- Dropdown -->
-                    <rect x="520" y="125" width="200" height="35" fill="#3d3d3d" stroke="#4A7BF7" stroke-width="2" rx="4"/>
-                    <text x="535" y="148" font-size="11" fill="#4A7BF7" font-weight="bold">Run Everything (Unsandboxed)</text>
-                    <text x="700" y="148" font-size="11" fill="#888">▼</text>
-                    
-                    <text x="210" y="210" font-size="14" fill="#fff" font-weight="bold">Auto-Approved Mode Transitions</text>
-                    <text x="210" y="235" font-size="11" fill="#888">Mode transitions that will be</text>
-                    <text x="210" y="252" font-size="11" fill="#888">automatically approved without prompting.</text>
-                    
-                    <rect x="520" y="205" width="200" height="35" fill="#3d3d3d" rx="4"/>
-                    <text x="535" y="228" font-size="11" fill="#555">e.g., agent->plan</text>
-                </svg>
-                
-                <div class="card" style="margin-top: 15px; border-left-color: #38A169;">
-                    <p style="font-size: 0.8em;"><strong>✅ ポイント：</strong>「<span class="accent">Run Everything (Unsandboxed)</span>」を選択すると、AIがコマンドを自動実行できるようになります</p>
+                <h2>📝 最初の依頼テンプレート</h2>
+                <div class="prompt-box">
+                    <h4>📋 コピペ用プロンプト</h4>
+                    <pre><code>このプロジェクトはAI駆動開発の型で進めます。
+いきなり実装せず、まず計画だけ出してください。
+
+確認してほしいこと：
+1. 課題の理解
+2. 入力・処理・出力
+3. 最小で作る場合の構成
+4. リスク・不明点
+5. 実装手順
+
+私がOKと言うまで、ファイル編集やコマンド実行はしないでください。</code></pre>
                 </div>
             </section>
             
@@ -1167,126 +1085,69 @@
                 </table>
             </section>
             
-            <!-- Slide 20: アクセストークン取得 - Step 1-2 -->
+            <!-- Slide 20: リポジトリ作成 -->
             <section>
-                <h2>🔑 アクセストークン取得（Step 1-2）</h2>
-                <div style="display: flex; gap: 30px; align-items: flex-start; justify-content: center;">
-                    <!-- Step 1: Settings -->
-                    <div style="text-align: center;">
-                        <p style="font-size: 0.7em; margin-bottom: 10px;"><strong>Step 1:</strong> 右上アイコン → Settings</p>
-                        <svg viewBox="0 0 220 320" style="width: 200px; border: 1px solid #d0d7de; border-radius: 8px; background: #fff;">
-                            <rect x="0" y="0" width="220" height="50" fill="#f6f8fa"/>
-                            <circle cx="195" cy="25" r="16" fill="#2da44e"/>
-                            <text x="195" y="30" text-anchor="middle" font-size="14" fill="#fff">👤</text>
-                            <rect x="10" y="60" width="200" height="40" fill="#fff" stroke="#d0d7de" rx="6"/>
-                            <text x="25" y="85" font-size="12" fill="#1f2328">⚙️ Settings</text>
-                            <rect x="10" y="60" width="200" height="40" fill="rgba(74,123,247,0.1)" stroke="#4A7BF7" stroke-width="2" rx="6"/>
-                            <rect x="10" y="110" width="200" height="30" fill="#fff"/>
-                            <text x="25" y="130" font-size="11" fill="#656d76">🤖 Copilot settings</text>
-                            <rect x="10" y="145" width="200" height="30" fill="#fff"/>
-                            <text x="25" y="165" font-size="11" fill="#656d76">🎨 Appearance</text>
-                            <rect x="10" y="180" width="200" height="30" fill="#fff"/>
-                            <text x="25" y="200" font-size="11" fill="#656d76">♿ Accessibility</text>
-                            <line x1="10" y1="220" x2="210" y2="220" stroke="#d0d7de"/>
-                            <rect x="10" y="230" width="200" height="30" fill="#fff"/>
-                            <text x="25" y="250" font-size="11" fill="#656d76">🚪 Sign out</text>
-                        </svg>
-                    </div>
-                    
-                    <!-- Step 2: Developer settings -->
-                    <div style="text-align: center;">
-                        <p style="font-size: 0.7em; margin-bottom: 10px;"><strong>Step 2:</strong> 左下 → Developer settings</p>
-                        <svg viewBox="0 0 220 320" style="width: 200px; border: 1px solid #d0d7de; border-radius: 8px; background: #fff;">
-                            <text x="15" y="25" font-size="10" fill="#656d76" font-weight="bold">Security</text>
-                            <rect x="10" y="35" width="200" height="28" fill="#fff"/>
-                            <text x="25" y="53" font-size="11" fill="#1f2328">🔒 Code security</text>
-                            <text x="15" y="80" font-size="10" fill="#656d76" font-weight="bold">Integrations</text>
-                            <rect x="10" y="90" width="200" height="28" fill="#fff"/>
-                            <text x="25" y="108" font-size="11" fill="#1f2328">📦 Applications</text>
-                            <rect x="10" y="123" width="200" height="28" fill="#fff"/>
-                            <text x="25" y="141" font-size="11" fill="#1f2328">⏰ Scheduled reminders</text>
-                            <text x="15" y="175" font-size="10" fill="#656d76" font-weight="bold">Archives</text>
-                            <rect x="10" y="185" width="200" height="28" fill="#fff"/>
-                            <text x="25" y="203" font-size="11" fill="#1f2328">📋 Security log</text>
-                            <rect x="10" y="218" width="200" height="28" fill="#fff"/>
-                            <text x="25" y="236" font-size="11" fill="#1f2328">💰 Sponsorship log</text>
-                            <line x1="10" y1="255" x2="210" y2="255" stroke="#d0d7de"/>
-                            <rect x="10" y="265" width="200" height="35" fill="rgba(74,123,247,0.1)" stroke="#4A7BF7" stroke-width="2" rx="6"/>
-                            <text x="25" y="287" font-size="12" fill="#1f2328" font-weight="bold">&lt;/&gt; Developer settings</text>
-                        </svg>
-                    </div>
-                </div>
+                <h2>📦 リポジトリ作成</h2>
+                <table>
+                    <tr><th>項目</th><th>おすすめ</th><th>理由</th></tr>
+                    <tr><td>Repository name</td><td>業務名がわかる短い名前</td><td>後から探しやすい</td></tr>
+                    <tr><td>Visibility</td><td>最初はPrivate</td><td>未整理の情報を外に出さない</td></tr>
+                    <tr><td>README</td><td>作成する</td><td>目的・使い方を残す場所になる</td></tr>
+                    <tr><td>.gitignore</td><td>使う言語に合わせて選ぶ</td><td>不要ファイルや秘密情報を避ける</td></tr>
+                </table>
+                <p class="center small" style="margin-top: 16px;">GitHubは「完成品の置き場」ではなく、AIとの作業履歴を残す場所です。</p>
             </section>
             
-            <!-- Slide 20b: アクセストークン取得 - Step 3-4 -->
+            <!-- Slide 20b: 初回保存の考え方 -->
             <section>
-                <h2>🔑 アクセストークン取得（Step 3-4）</h2>
-                <div style="display: flex; gap: 30px; align-items: flex-start; justify-content: center;">
-                    <!-- Step 3-4: Generate new token -->
-                    <div style="text-align: center;">
-                        <p style="font-size: 0.7em; margin-bottom: 10px;"><strong>Step 3-4:</strong> Personal access tokens → Tokens (classic) → Generate new token (classic)</p>
-                        <svg viewBox="0 0 350 180" style="width: 320px; border: 1px solid #d0d7de; border-radius: 8px; background: #fff;">
-                            <rect x="150" y="15" width="180" height="35" fill="#f6f8fa" stroke="#d0d7de" rx="6"/>
-                            <text x="175" y="38" font-size="12" fill="#1f2328">Generate new token ▼</text>
-                            <rect x="150" y="55" width="180" height="100" fill="#fff" stroke="#d0d7de" rx="6" filter="drop-shadow(0 2px 4px rgba(0,0,0,0.1))"/>
-                            <rect x="155" y="62" width="170" height="40" fill="#fff"/>
-                            <text x="165" y="80" font-size="11" fill="#1f2328" font-weight="bold">Generate new token</text>
-                            <text x="165" y="95" font-size="10" fill="#656d76">Fine-grained, repo-scoped</text>
-                            <line x1="155" y1="105" x2="325" y2="105" stroke="#d0d7de"/>
-                            <rect x="155" y="108" width="170" height="40" fill="rgba(74,123,247,0.1)" stroke="#4A7BF7" stroke-width="2" rx="4"/>
-                            <text x="165" y="126" font-size="11" fill="#1f2328" font-weight="bold">Generate new token (classic)</text>
-                            <text x="165" y="141" font-size="10" fill="#656d76">For general use</text>
-                        </svg>
+                <h2>💾 初回保存の考え方</h2>
+                <div class="card-grid">
+                    <div class="card">
+                        <h4>最初に残すもの</h4>
+                        <ul>
+                            <li>README</li>
+                            <li>docs/requirements.md</li>
+                            <li>docs/technical-spec.md</li>
+                            <li>CLAUDE.md</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h4>まだ入れないもの</h4>
+                        <ul>
+                            <li>APIキー</li>
+                            <li>顧客情報</li>
+                            <li>個人情報</li>
+                            <li>不要な実データ</li>
+                        </ul>
                     </div>
                 </div>
-                <p class="center small" style="margin-top: 20px;">※ 「classic」を選択してください</p>
+                <p class="center small" style="margin-top: 16px;">最初の保存は「コードを書く前の判断」を残すのが目的です。</p>
             </section>
             
-            <!-- Slide 20c: アクセストークン取得 - Step 5-6 -->
+            <!-- Slide 20c: GitHub連携プロンプト -->
             <section>
-                <h2>🔑 アクセストークン取得（Step 5-7）</h2>
-                <div style="display: flex; flex-direction: column; gap: 15px; align-items: center;">
-                    <svg viewBox="0 0 550 280" style="width: 100%; max-width: 520px; border: 1px solid #d0d7de; border-radius: 8px; background: #fff; padding: 10px;">
-                        <!-- Expiration -->
-                        <text x="20" y="30" font-size="13" fill="#1f2328" font-weight="bold" style="background: #fff4c4;">Expiration</text>
-                        <rect x="15" y="25" width="75" height="18" fill="#fff4c4" rx="2"/>
-                        <text x="20" y="38" font-size="11" fill="#1f2328" font-weight="bold">Expiration</text>
-                        <rect x="20" y="50" width="150" height="32" fill="#f6f8fa" stroke="#d0d7de" rx="6"/>
-                        <text x="35" y="71" font-size="11" fill="#1f2328">📅 No expiration ▼</text>
-                        
-                        <!-- Warning -->
-                        <text x="20" y="105" font-size="9" fill="#9a6700">⚠️ GitHub strongly recommends that you set an expiration date...</text>
-                        
-                        <!-- Select scopes -->
-                        <text x="20" y="135" font-size="13" fill="#1f2328" font-weight="bold">Select scopes</text>
-                        <text x="20" y="152" font-size="10" fill="#656d76">Scopes define the access for personal tokens.</text>
-                        
-                        <!-- repo checkbox -->
-                        <rect x="20" y="165" width="510" height="70" fill="#f6f8fa" stroke="#d0d7de" rx="6"/>
-                        <rect x="30" y="175" width="16" height="16" fill="#4A7BF7" stroke="#4A7BF7" rx="3"/>
-                        <text x="34" y="188" font-size="12" fill="#fff">✓</text>
-                        <text x="55" y="188" font-size="12" fill="#1f2328" font-weight="bold">repo</text>
-                        <text x="200" y="188" font-size="10" fill="#656d76">Full control of private repositories</text>
-                        <text x="70" y="208" font-size="10" fill="#656d76">☑ repo:status  ☑ repo_deployment  ☑ public_repo  ☑ repo:invite</text>
-                        <text x="70" y="223" font-size="10" fill="#656d76">☑ security_events</text>
-                        
-                        <!-- workflow checkbox -->
-                        <rect x="20" y="245" width="510" height="30" fill="#f6f8fa" stroke="#d0d7de" rx="6"/>
-                        <rect x="30" y="252" width="16" height="16" fill="#4A7BF7" stroke="#4A7BF7" rx="3"/>
-                        <text x="34" y="265" font-size="12" fill="#fff">✓</text>
-                        <text x="55" y="265" font-size="12" fill="#1f2328" font-weight="bold">workflow</text>
-                        <text x="200" y="265" font-size="10" fill="#656d76">Update GitHub Action workflows</text>
-                    </svg>
-                </div>
-                <div class="card" style="margin-top: 15px; border-left-color: #d1242f;">
-                    <p style="font-size: 0.8em;"><strong>⚠️ 重要：</strong>「Generate token」後に表示されるトークンは<span class="accent">二度と表示されません</span>。必ずメモしてください！</p>
+                <h2>🔗 GitHub連携プロンプト</h2>
+                <div class="prompt-box">
+                    <h4>📋 コピペ用プロンプト</h4>
+                    <pre><code>このプロジェクトをGitHubに保存したいです。
+
+やってほしいこと：
+1. 現在のフォルダ構成を確認
+2. .gitignore が必要か確認
+3. README / docs / CLAUDE.md が揃っているか確認
+4. GitHubへの保存方法を提案
+5. 私がOKしたら、初回コミットまで進める
+
+注意：
+- 秘密情報や実データが混ざっていないか必ず確認してください
+- 不明点があれば実行前に質問してください</code></pre>
                 </div>
             </section>
             
             <!-- Slide 21: 初回プッシュ用プロンプト -->
             <section>
                 <h2>📝 初回プッシュ用プロンプト</h2>
-                <p class="small">以下をCursorにコピペして実行</p>
+                <p class="small">以下をClaude Codeに渡して実行</p>
                 <div class="prompt-box">
                     <h4>📋 コピペ用プロンプト</h4>
                     <pre><code># プロジェクト初期設定
@@ -1299,13 +1160,13 @@
 1. 要件定義書と技術要件を先に固める
    - 私が「OK」と言うまで実装は進めない
    - 不明点があれば必ず質問する
-2. .cursor/rules を作成し、要件を保存
-   - 作業前に必ずrulesを参照してから進める
+2. CLAUDE.md を作成し、要件と進め方を保存
+   - 作業前に必ずCLAUDE.mdとdocsを参照してから進める
 3. タスクのチェックリストで進捗を可視化
 
 ## 技術スタック（予定）
 - Next.js 15 (App Router) / Prisma / PostgreSQL
-- Tailwind CSS / Google Cloud (Cloud Run)
+- Tailwind CSS / 共有先は用途に応じて提案
 ※ より良い案があれば提案してください
 
 ## 今回のタスク
@@ -1315,85 +1176,83 @@ GitHubとの連携をCLIで設定し、初回プッシュまで実行して。
             </section>
             
             <!-- ================================ -->
-            <!-- Part 6: Google Cloudセットアップ -->
+            <!-- Part 6: 公開・共有の考え方 -->
             <!-- ================================ -->
             
-            <!-- Slide 22: Google Cloudとは -->
+            <!-- Slide 22: 公開は目的で選ぶ -->
             <section>
-                <h2><span class="step-indicator">3</span> Google Cloudとは</h2>
-                <div class="card">
-                    <h4>☁️ インターネット上の公開場所</h4>
-                    <ul>
-                        <li>作ったアプリを世界中に公開できる</li>
-                        <li>24時間365日動き続ける</li>
-                        <li>Cloud Run：コンテナを簡単にデプロイ</li>
-                    </ul>
-                </div>
-                <p class="small" style="margin-top: 16px;">
-                    コンソール：<a href="https://console.cloud.google.com/" target="_blank">console.cloud.google.com</a>
-                </p>
+                <h2><span class="step-indicator">3</span> 公開は目的で選ぶ</h2>
+                <table>
+                    <tr><th>誰が使うか</th><th>共有方法の例</th><th>確認すること</th></tr>
+                    <tr><td>自分だけ</td><td>自分のPC / ローカル環境</td><td>起動手順・データ保存</td></tr>
+                    <tr><td>チーム</td><td>GitHub / 共有サーバー / チーム内ツール</td><td>権限・更新方法・引き継ぎ</td></tr>
+                    <tr><td>顧客・外部</td><td>Vercel / Cloud Run など</td><td>認証・費用・ログ・責任範囲</td></tr>
+                </table>
+                <p class="small" style="margin-top: 16px;">公開先は技術の話ではなく、「誰が、何のために使うか」で決めます。</p>
             </section>
             
-            <!-- Slide 23: 組織内メンバーの設定 -->
+            <!-- Slide 23: 小さく検証する -->
             <section>
-                <h2>☁️ 組織内メンバー（@shibuya-ad.com）</h2>
-                <table>
-                    <tr><th>Step</th><th>操作</th></tr>
-                    <tr><td>1</td><td><a href="https://console.cloud.google.com/" target="_blank">console.cloud.google.com</a> にアクセス</td></tr>
-                    <tr><td>2</td><td>会社のGoogleアカウントでログイン</td></tr>
-                    <tr><td>3</td><td>組織アカウント内で新しいプロジェクトを作成</td></tr>
-                    <tr><td>4</td><td>Cloud Run APIを有効化</td></tr>
-                    <tr><td>5</td><td>gcloud CLIをインストール</td></tr>
-                    <tr><td>6</td><td><code>gcloud auth login</code> で認証</td></tr>
-                </table>
-                <div class="success-box">
-                    <h4>✅ 請求先アカウント</h4>
-                    <p>設定済みです（西村が設定済み）</p>
+                <h2>🧪 小さく検証する</h2>
+                <div class="card-grid">
+                    <div class="card">
+                        <h4>最初に見ること</h4>
+                        <ul>
+                            <li>入力が想定通り入るか</li>
+                            <li>処理結果が業務に使えるか</li>
+                            <li>例外時に止まり方がわかるか</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h4>後で決めること</h4>
+                        <ul>
+                            <li>公開先</li>
+                            <li>認証・権限</li>
+                            <li>自動実行・通知</li>
+                        </ul>
+                    </div>
                 </div>
+                <p class="center small" style="margin-top: 16px;">最初から本番運用を作り切るより、判断に必要な動く証拠を先に作ります。</p>
             </section>
             
-            <!-- Slide 24: 組織外メンバーの設定 -->
+            <!-- Slide 24: 公開前チェック -->
             <section>
-                <h2>☁️ 組織外メンバー（個人アカウント）</h2>
-                <table>
-                    <tr><th>Step</th><th>操作</th></tr>
-                    <tr><td>1</td><td><a href="https://console.cloud.google.com/" target="_blank">console.cloud.google.com</a> にアクセス</td></tr>
-                    <tr><td>2</td><td>Googleアカウントでログイン（なければ作成）</td></tr>
-                    <tr><td>3</td><td><strong>請求先アカウントを設定</strong>（クレジットカード登録）</td></tr>
-                    <tr><td>4</td><td>新しいプロジェクトを作成</td></tr>
-                    <tr><td>5</td><td>Cloud Run APIを有効化</td></tr>
-                    <tr><td>6</td><td>gcloud CLIをインストール</td></tr>
-                    <tr><td>7</td><td><code>gcloud auth login</code> で認証</td></tr>
-                </table>
+                <h2>🔐 公開前チェック</h2>
+                <ul class="checklist">
+                    <li>APIキー・パスワードなどの秘密情報が入っていない</li>
+                    <li>誰が見られるか、誰が編集できるかが決まっている</li>
+                    <li>実データを扱う場合の保存場所・削除方法が決まっている</li>
+                    <li>費用が発生する場合、上限や停止方法を確認している</li>
+                    <li>問題が起きたときに止める手順がある</li>
+                </ul>
                 <div class="warning-box">
-                    <h4>⚠️ 請求先アカウント</h4>
-                    <p>事前に設定を完了させてください</p>
+                    <h4>⚠️ 公開は最後でいい</h4>
+                    <p>AI駆動開発では、まず「作れるか・使えるか」を確認し、その後に共有範囲を決めます。</p>
                 </div>
             </section>
             
-            <!-- Slide 25: CLI接続テスト -->
+            <!-- Slide 25: 運用前チェック -->
             <section>
-                <h2>🔧 CLI接続テスト用プロンプト</h2>
-                <p class="small">Google Cloudの設定確認</p>
+                <h2>🔧 運用前チェック用プロンプト</h2>
+                <p class="small">作ったものを人に使ってもらう前の確認</p>
                 <div class="prompt-box">
                     <h4>📋 コピペ用プロンプト</h4>
-                    <pre><code># Google Cloud CLI セットアップ＆接続テスト
+                    <pre><code># 共有・運用前レビュー
 
 ## 目的
-Google Cloud（Cloud Run）へのデプロイ準備として、
-CLI環境を構築し、接続テストを行いたいです。
+このプロジェクトを他の人が使える状態にする前に、
+抜け漏れがないかレビューしたいです。
 
-## 実行してほしいこと（CLIで実行）
+## 確認してほしいこと
 
-1. gcloud CLI インストール確認（なければインストール）
-2. gcloud auth login で認証
-3. プロジェクト設定と確認
-4. Cloud Run API 有効化確認
-5. gcloud config list で現在の設定を表示
-6. すべて正常に完了したことを報告
+1. READMEに起動手順・使い方が書かれているか
+2. 必要な環境変数や設定が整理されているか
+3. 秘密情報がコードに入っていないか
+4. 想定ユーザーと共有方法が妥当か
+5. エラー時の確認・復旧手順があるか
+6. 追加で必要なテストがあるか
 
-※ コマンドの提示ではなく、実行までしてください。
-※ エラーが出た場合は、原因と解決策を提示してください。</code></pre>
+問題点があれば、優先度順に修正案を出してください。</code></pre>
                 </div>
             </section>
             
@@ -1453,46 +1312,44 @@ CLI環境を構築し、接続テストを行いたいです。
 ## 依頼事項
 1. docs/requirements.md に要件定義書として保存
 2. docs/technical-spec.md に技術要件を保存
-3. .cursor/rules を作成してルール設定
+3. CLAUDE.md を作成してルール設定
 4. 不明点があれば質問して
 5. 私が「OK」と言うまで実装は進めないで</code></pre>
                 </div>
             </section>
             
-            <!-- Slide 28: .cursor/rules 作成 -->
+            <!-- Slide 28: CLAUDE.md 作成 -->
             <section>
-                <h2>📋 .cursor/rules 作成</h2>
+                <h2>📋 CLAUDE.md 作成</h2>
                 <p style="font-size: 0.85em;">要件定義が固まったら、ルールファイルを作成</p>
                 <div class="prompt-box">
                     <h4>📋 コピペ用プロンプト</h4>
-                    <pre><code># .cursor/rules 作成依頼
-
-## 参考ドキュメント
-https://cursor.com/ja/docs/context/rules
+                    <pre><code># CLAUDE.md 作成依頼
 
 ## 依頼内容
-このプロジェクト用の .cursor/rules ファイルを作成して。
+このプロジェクト用の CLAUDE.md ファイルを作成して。
 
 ## 含めるべき内容
 1. docs/requirements.md の要件定義
 2. docs/technical-spec.md の技術要件
-3. コーディング規約とファイル構成ルール
+3. AI駆動開発の進め方
+4. コーディング規約とファイル構成ルール
 
 ## 重要なルール（必ず含める）
-- 何か実装を進める前に、必ずこのrulesと要件定義書・技術要件を確認してから作業すること
+- 何か実装を進める前に、必ずCLAUDE.mdと要件定義書・技術要件を確認してから作業すること
 - 不明点があれば必ず質問すること
 - 勝手に要件を変更しないこと
-- 私がOKと言うまでデプロイは進めないこと（まずローカル環境でテスト）</code></pre>
+- 私がOKと言うまで実装・公開範囲を広げないこと</code></pre>
                 </div>
             </section>
             
-            <!-- Slide 28b: .cursor/rules の自動適用 -->
+            <!-- Slide 28b: CLAUDE.md の参照 -->
             <section>
-                <h2>✅ .cursor/rules の自動適用</h2>
+                <h2>✅ CLAUDE.md の参照</h2>
                 <div class="success-box">
-                    <h4>🎉 良いニュース</h4>
-                    <p><strong>.cursor/rules に書いておけば、Cursorは自動的に参照します！</strong><br>
-                    毎回「参照して」と言う必要はありません。</p>
+                    <h4>🎉 判断基準を外部化する</h4>
+                    <p><strong>CLAUDE.mdに書くと、プロジェクトの前提を毎回渡しやすくなります。</strong><br>
+                    属人的な口頭説明を、AIが参照できるルールに変えます。</p>
                 </div>
                 <div class="warning-box" style="margin-top: 20px;">
                     <h4>⚠️ ただし例外あり</h4>
@@ -1501,12 +1358,12 @@ https://cursor.com/ja/docs/context/rules
                 </div>
                 <div class="prompt-box" style="margin-top: 15px;">
                     <h4>📋 リマインド用プロンプト</h4>
-                    <pre><code>cursor rulesを参照して要件定義と技術要件を確認してから進めて</code></pre>
+                    <pre><code>CLAUDE.md と docs/requirements.md、docs/technical-spec.md を確認してから進めて</code></pre>
                 </div>
             </section>
             
             <!-- ================================ -->
-            <!-- Part 8: ローカル開発 -->
+            <!-- Part 8: AI実装 -->
             <!-- ================================ -->
             
             <!-- Slide 29: 開発中のチェックポイント -->
@@ -1521,7 +1378,7 @@ https://cursor.com/ja/docs/context/rules
                 <div class="warning-box">
                     <h4>💡 開発のコツ</h4>
                     <p>開発を進める時は毎回<br>
-                    「cursor rulesを参照して要件定義と技術要件を確認してから進めて」</p>
+                    「CLAUDE.md と要件定義・技術要件を確認してから進めて」</p>
                 </div>
             </section>
             
@@ -1545,34 +1402,35 @@ https://cursor.com/ja/docs/context/rules
             </section>
             
             <!-- ================================ -->
-            <!-- Part 9: デプロイ -->
+            <!-- Part 9: 共有・運用 -->
             <!-- ================================ -->
             
-            <!-- Slide 32: デプロイとは -->
+            <!-- Slide 32: 共有とは -->
             <section>
-                <h2><span class="step-indicator">6</span> デプロイとは</h2>
+                <h2><span class="step-indicator">6</span> 共有・運用とは</h2>
                 <div class="quote" style="font-size: 1.1em;">
                     作ったものを<br>
-                    <span class="accent">自分の端末以外でも使える場所</span>に<br>
-                    反映して公開すること
+                    <span class="accent">次回も、他の人も、迷わず使える状態</span>に<br>
+                    整えること
                 </div>
                 <p class="center small" style="margin-top: 20px;">
-                    ローカル（自分のPC）→ クラウド（インターネット上）
+                    README・起動手順・権限・運用ルールまで含めて成果物です
                 </p>
             </section>
             
-            <!-- Slide 33: Cloud Runデプロイ -->
+            <!-- Slide 33: 共有依頼プロンプト -->
             <section>
-                <h2>☁️ Cloud Runデプロイ</h2>
+                <h2>📦 共有依頼プロンプト</h2>
                 <div class="prompt-box">
                     <h4>📋 コピペ用プロンプト</h4>
-                    <pre><code>このアプリをGCP Cloud Runにデプロイして
-CLIで設定して、コマンドの提示ではなく実行までして
+                    <pre><code>このプロジェクトを、他の人が使える状態に整えてください。
 
-完了したら以下を確認して報告して：
-- デプロイしたURL
-- 環境変数が正しく設定されているか
-- 権限やセキュリティに問題がないか</code></pre>
+やってほしいこと：
+1. READMEに概要・使い方・起動手順を書く
+2. 必要な環境変数や事前準備を整理する
+3. 共有方法の選択肢を出す
+4. セキュリティ・費用・運用上の注意点を洗い出す
+5. 私が選んだ共有方法に合わせて実装・設定する</code></pre>
                 </div>
             </section>
             
@@ -1580,15 +1438,15 @@ CLIで設定して、コマンドの提示ではなく実行までして
             <section>
                 <h2>✅ 動作確認</h2>
                 <ul class="checklist">
-                    <li>デプロイしたURLにアクセスできる</li>
+                    <li>想定ユーザーが迷わず使い始められる</li>
                     <li>主要な機能が動作する</li>
-                    <li>データの登録・閲覧ができる</li>
-                    <li>エラーが出ていない</li>
+                    <li>入力・処理・出力が要件と一致している</li>
+                    <li>エラー時の確認方法がわかる</li>
                 </ul>
                 <div class="success-box">
                     <h4>🎉 完了！</h4>
-                    <p>ここまで来たら、あなたのシステムは<br>
-                    世界中からアクセスできる状態になっています！</p>
+                    <p>ここまで来たら、あなたの成果物は<br>
+                    一度きりではなく、改善し続けられる状態になっています。</p>
                 </div>
             </section>
             
@@ -1619,12 +1477,12 @@ CLIで設定して、コマンドの提示ではなく実行までして
                 <ul>
                     <li><strong>各自のペースで進める</strong><br>
                         <span class="small">早い人は機能追加、じっくり派は基本機能を確実に</span></li>
-                    <li><strong>昼休憩は自由</strong><br>
-                        <span class="small">キリのいいところで各自取ってください</span></li>
-                    <li><strong>17:00を目安にデプロイ完了</strong><br>
-                        <span class="small">18:00から発表があります</span></li>
+                    <li><strong>まず計画を出させる</strong><br>
+                        <span class="small">理解・方針・手順を確認してから実装に入る</span></li>
+                    <li><strong>判断は人間が持つ</strong><br>
+                        <span class="small">AIの提案を採用するかどうかは自分で決める</span></li>
                     <li><strong>困ったら壁打ち</strong><br>
-                        <span class="small">西村に声をかけてください。一緒に解決します。</span></li>
+                        <span class="small">状況・期待結果・実際の結果をセットで共有してください。</span></li>
                 </ul>
                 <p class="center small" style="margin-top: 16px;">
                     💡 質問は恥ずかしいことではありません。「早く聞く」が最速の解決策です。
@@ -1636,12 +1494,12 @@ CLIで設定して、コマンドの提示ではなく実行までして
                 <h1>🚀 Let's Start!</h1>
                 <p style="font-size: 1.1em; margin-top: 30px;">
                     準備はいいですか？<br>
-                    <strong class="accent">自分の手でシステムを作りましょう！</strong>
+                    <strong class="accent">AI駆動開発を始めましょう！</strong>
                 </p>
                 <div style="margin-top: 50px;">
                     <p class="small">困ったら遠慮なく声をかけてください</p>
                 </div>
-                <svg class="logo-large" style="margin-top: 30px;"><use href="#axis-logo"/></svg>
+                <svg class="logo-large" style="margin-top: 30px;"><use href="#generic-logo"/></svg>
             </section>
             
             <!-- ================================ -->
@@ -1675,18 +1533,18 @@ CLIで設定して、コマンドの提示ではなく実行までして
 # 開発の進め方
 
 ## 前提条件
-- GitHub: ログイン済み、CLI使用可能
-- GCP（またはVercel）: ログイン済み、CLI使用可能
-- エディタ: Cursor使用
+- Claude Code: インストール・ログイン済み
+- GitHub: 必要に応じてリポジトリ作成・共有が可能
+- 開発環境: 必要に応じて Node.js / Python などを使用可能
 
 ## 技術スタック（変更可）
-- フレームワーク: Next.js（App Router）
-- スタイリング: Tailwind CSS
-- DB: PostgreSQL + Prisma
-- デプロイ: Google Cloud Run（またはVercel）
+- フレームワーク: 作りたいものに合わせて提案してほしい
+- 画面: Next.js / HTML / その他の選択肢を比較してほしい
+- データ保存: CSV / JSON / DB などから適切なものを提案してほしい
+- 共有方法: 個人利用 / チーム共有 / クラウド公開から選びたい
 
 ### 必要に応じて追加（該当する場合のみ記載）
-- 認証: 【例：Googleログインで社内ユーザーのみアクセス可能にしたい】
+- 認証: 【例：特定メンバーだけアクセス可能にしたい】
 - 外部連携: 【例：Slack通知、スプレッドシート連携】
 - 権限管理: 【例：管理者と一般ユーザーで見れる画面を分けたい】
 
@@ -1695,17 +1553,17 @@ CLIで設定して、コマンドの提示ではなく実行までして
 ## 開発フロー
 1. 要件定義書の作成（docs/requirements.md）
 2. 技術要件の作成（docs/technical-spec.md）
-3. .cursor/rules の作成
+3. CLAUDE.md の作成
 4. GitHubリポジトリ作成 & 初回プッシュ
-5. ローカル環境で開発
-6. 私がOKを出したらデプロイ
+5. Plan → Execute で実装・検証
+6. 私がOKを出したら共有方法を決める
 
 ---
 
 # お願い事項
 
 ## 必ず守ってほしいこと
-- 私がOKと言うまでデプロイは進めない（まずローカルでテスト）
+- 私がOKと言うまで公開・共有範囲を広げない
 - 不明点があれば必ず質問する（勝手に判断しない）
 - 要件を勝手に変更しない
 - 進捗はチェックリストで可視化する
@@ -1730,8 +1588,8 @@ CLIで設定して、コマンドの提示ではなく実行までして
 3. 私がOKを出したら技術要件の作成（私の確認待ち）
 4. 私がOKを出したら → エンジニア目線レビューを実施
 5. レビュー結果を私に報告し、追加・修正があれば提案
-6. 私が最終OKを出したら .cursor/rules の作成
-7. GitHubリポジトリ作成 & 初回プッシュのテスト</code></pre>
+6. 私が最終OKを出したら CLAUDE.md の作成
+7. 合意した範囲で実装・検証に進む</code></pre>
                 </div>
             </section>
             
@@ -1739,7 +1597,7 @@ CLIで設定して、コマンドの提示ではなく実行までして
     </div>
     
     <!-- Logo watermark -->
-    <svg class="logo"><use href="#axis-logo"/></svg>
+    <svg class="logo"><use href="#generic-logo"/></svg>
     
     <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/reveal.js"></script>
     <script>
